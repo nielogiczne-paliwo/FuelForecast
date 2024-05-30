@@ -3,8 +3,8 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CTP-APPLICATION": {
-      "projectType": "application",
+    "FuelForecast": {
+      "projectType": "FuelForecast",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ctp-application",
+            "outputPath": "dist/FuelForecast",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "CTP-APPLICATION:build:production"
+              "browserTarget": "FuelForecast:build:production"
             },
             "development": {
-              "browserTarget": "CTP-APPLICATION:build:development"
+              "browserTarget": "FuelForecast:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CTP-APPLICATION:build"
+            "browserTarget": "FuelForecast:build"
           }
         },
         "test": {
