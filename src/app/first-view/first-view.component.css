@@ -1,0 +1,55 @@
+section {
+  width: 100%;
+  height: 80svh;
+  border: 2px solid #d0baf5;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainFrame {
+  width: 70%;
+  height: 60svh;
+  background-color: #1b1329;
+  border-radius: 20px;
+  display: flex;
+}
+.textFrame {
+  margin: 50px;
+  width: 40%;
+  padding: 10px;
+}
+.bF {
+  width: 30px;
+  height: 40px;
+}
+h1 {
+  margin: 20px 0;
+  font-size: 3rem;
+  color: #ffffff;
+}
+span {
+  background: -webkit-linear-gradient(
+    left,
+    #d0baf5 0%,
+    #9765e7 38%,
+    #2c066a 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+figure {
+  position: relative;
+  left: 50px;
+}
+img {
+  position: relative;
+  bottom: -100px;
+  right: -100px;
+  width: 90%;
+}
