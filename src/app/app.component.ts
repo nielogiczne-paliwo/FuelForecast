@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor() {}
+  activeView: number;
+  constructor() {
+    this.activeView = 1;
+  }
+  setActiveactiveView(event: number) {
+    this.activeView = event;
+  }
 }

@@ -3,3 +3,14 @@ main {
   min-height: 100svh;
   padding: 0 10%;
 }
+app-second-view,
+app-first-view {
+  display: none;
+  transform: translateX(-1000px);
+  transition: 2s ease-in-out;
+}
+.active {
+  transform: translateX(0px);
+  transition: 2s ease-in-out;
+  display: block;
+}
