@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { HeaderNavbarComponent } from './header-navbar/header-navbar.component';
 import { FirstViewComponent } from './first-view/first-view.component';
 import { ButtonComponent } from './button/button.component';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderNavbarComponent, FirstViewComponent, ButtonComponent],
+  declarations: [AppComponent, HeaderNavbarComponent, FirstViewComponent, ButtonComponent, LogoComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
