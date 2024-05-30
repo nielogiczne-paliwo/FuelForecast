@@ -42,7 +42,9 @@ span {
 p {
   color: #fff;
   font-size: 1.5rem;
+  margin-bottom: 30px;
 }
+
 figure {
   position: relative;
   left: 50px;
