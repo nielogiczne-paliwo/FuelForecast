@@ -4,7 +4,11 @@
       <app-logo />
       <h1>Twój partner przy <span>prognozowaniu</span> <br />dostaw paliwa</h1>
       <p>Wprowadź dane i zobacz szczegóły dotyczące dostaw</p>
-      <app-button [buttonText]="'Dalej > >'" [isActive]="false" />
+      <app-button
+        [buttonText]="'Dalej > >'"
+        [isActive]="false"
+        (click)="nextView()"
+      />
     </div>
     <div class="imageDiv">
       <div class="imageCont">
