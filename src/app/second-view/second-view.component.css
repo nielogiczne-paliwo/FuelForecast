@@ -1,0 +1,40 @@
+section {
+  width: 100%;
+  min-height: 60svh;
+  border: 2px solid #d0baf5;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 0;
+}
+.mainFrame {
+  width: 70%;
+  min-height: 65svh;
+  background-color: #1b1329;
+  border-radius: 20px;
+  display: flex;
+}
+.textFrame {
+  margin: 30px;
+  width: 50%;
+  padding: 10px;
+}
+h1 {
+  margin: 20px 0 40px;
+  font-size: 2rem;
+  color: #ffffff;
+}
+.abc {
+  display: flex;
+  margin: 20px 0;
+}
+h2 {
+  color: #d0baf5;
+  margin-right: 20px;
+  font-size: 1.5rem;
+}
+h3 {
+  color: #a9a6af;
+  font-size: 1rem;
+}
