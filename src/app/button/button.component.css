@@ -1,10 +1,10 @@
 button {
   border-radius: 8px;
-  padding: 8px 25px;
+  padding: 8px 20px;
   background-color: #9765e7;
   border: 0px solid;
   transition: 0.2s ease-in-out;
-  font-size: 24px;
+  font-size: 1rem;
   color: #fff;
 }
 
