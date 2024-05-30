@@ -9,7 +9,7 @@ section {
 }
 .mainFrame {
   width: 70%;
-  height: 60svh;
+  min-height: 60svh;
   background-color: #1b1329;
   border-radius: 20px;
   display: flex;
@@ -44,14 +44,21 @@ p {
   font-size: 1.5rem;
   margin-bottom: 30px;
 }
+.imageDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.imageCont {
+  margin-right: -30px;
+  margin-bottom: -80px;
+  width: 85%;
+  min-width: 200px;
+}
 
 figure {
-  position: relative;
-  left: 50px;
+  display: block;
 }
 img {
-  position: relative;
-  bottom: -100px;
-  right: -100px;
-  width: 90%;
+  width: 100%;
 }
