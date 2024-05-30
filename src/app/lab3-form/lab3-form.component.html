@@ -1,0 +1,79 @@
+<section>
+  <h2>Specyfikacja czujnika</h2>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <h3>Dolna granica</h3>
+    <h3>Górna granica</h3>
+    <div>
+      <input
+        type="number"
+        id="VDown"
+        formControlName="VDown"
+        required
+        value="0"
+      />
+      <label for="VDown">[V]</label>
+    </div>
+    <div>
+      <input type="number" id="VUp" formControlName="VUp" required value="0" />
+      <label for="VUp">[V]</label>
+    </div>
+    <div [ngClass]="{ showInput: !shwitchToogle }">
+      <input
+        type="number"
+        id="DDown1"
+        formControlName="DDown1"
+        required
+        value="0"
+      />
+      <label for="DDown">[rad/s]</label>
+    </div>
+    <div [ngClass]="{ showInput: !shwitchToogle }">
+      <input
+        type="number"
+        id="DUp1"
+        formControlName="DUp1"
+        required
+        value="0"
+      />
+      <label for="DUp">[rad/s]</label>
+    </div>
+    <div [ngClass]="{ showInput: shwitchToogle }">
+      <input
+        type="number"
+        id="DDown2"
+        formControlName="DDown2"
+        required
+        value="0"
+      />
+      <label for="DDown">[mm]</label>
+    </div>
+    <div [ngClass]="{ showInput: shwitchToogle }">
+      <input
+        type="number"
+        id="DUp2"
+        formControlName="DUp2"
+        required
+        value="0"
+      />
+      <label for="DUp">[mm]</label>
+    </div>
+
+    <button type="submit">Wyślij</button>
+  </form>
+  <section class="switchToggle">
+    <h4>{{ shwitchToogleTittle }}</h4>
+    <label class="switch" for="toggle">
+      <input
+        type="checkbox"
+        id="toggle"
+        name="toggle"
+        checked
+        (change)="onChange($event)"
+      />
+      <span
+        class="switchToggleRound"
+        [ngClass]="{ active: !shwitchToogle }"
+      ></span>
+    </label>
+  </section>
+</section>

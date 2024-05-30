@@ -1,0 +1,70 @@
+<section>
+  <article class="checkboxArticle">
+    <h2>Wybierz wyświetlane napięcia:</h2>
+    <ul>
+      <li>
+        <input
+          type="checkbox"
+          id="ai1"
+          name="ai1"
+          value="ai1"
+          checked="true"
+          (change)="onChange($event)"
+        />
+        <label for="ai1">Napięcie ai1</label>
+      </li>
+      <li>
+        <input
+          type="checkbox"
+          id="ai2"
+          name="ai2"
+          value="ai2"
+          checked="true"
+          (change)="onChange($event)"
+        />
+        <label for="ai2">Napięcie ai2</label>
+      </li>
+    </ul>
+  </article>
+  <article class="chartArticle">
+    <div class="chartBox">
+      <canvas id="canvas">{{ chart[0] }}</canvas>
+      <app-change-form (FormEiit)="saveFormData($event, 0)" />
+    </div>
+  </article>
+  <article class="buttonArticle">
+    <div class="buttonBox">
+      <app-run-button
+        [isActive]="StartButton"
+        [titleButton]="buttonName[0]"
+        (click)="start()"
+      />
+      <app-run-button
+        [isActive]="RestartButton"
+        [titleButton]="buttonName[1]"
+        (click)="restart()"
+      />
+      <app-run-button
+        [isActive]="StopButton"
+        [titleButton]="buttonName[2]"
+        (click)="stop()"
+      />
+    </div>
+  </article>
+  <article class="descriptionArticle">
+    <h4>
+      Opis
+      <app-show-button
+        [text]="'rozwiń'"
+        (isClick)="changeDescription($event)"
+      />
+    </h4>
+    <aside [ngClass]="{ disactiveChart: !showDescription }">
+      <p>
+        Wykres napięcia od czasu, który otrzymaliśmy z przetwornika
+        analogowo-cyfrowego, do którego wysyłaliśmy sygnał analogowy sterowany
+        przez nas.
+      </p>
+    </aside>
+  </article>
+</section>

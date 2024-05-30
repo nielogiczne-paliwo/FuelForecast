@@ -1,0 +1,102 @@
+<!-- <h1>Laboratorium 35</h1> -->
+<section>
+  <!-- <article class="checkboxArticle">
+    <h2>Wybierz wyświetlane wykresy:</h2>
+    <ul>
+      <li>
+        <input
+          type="checkbox"
+          id="dist"
+          name="dist"
+          value="dist"
+          checked="true"
+          (change)="onChange($event)"
+        />
+        <label for="dist">Wykres odległości</label>
+      </li>
+      <li>
+        <input
+          type="checkbox"
+          id="V"
+          name="V"
+          value="V"
+          checked="true"
+          (change)="onChange($event)"
+        />
+        <label for="V">Wykres prędkości</label>
+      </li>
+    </ul>
+  </article> -->
+  <article class="formArticle">
+    <app-lab3-form (FormLab3Eiit)="saveForm($event)" />
+  </article>
+  <article class="chartArticle">
+    <div class="chartBox">
+      <canvas id="canvas">{{ chart[0] }}</canvas>
+      <app-change-form (FormEiit)="saveFormData($event, 0)" />
+    </div>
+    <div class="chartBox" [ngClass]="{ disactiveChart: dataForm.switchFrom }">
+      <canvas id="canvas1">{{ chart[1] }}</canvas>
+      <app-change-form (FormEiit)="saveFormData($event, 1)" />
+    </div>
+    <div class="chartBox" [ngClass]="{ disactiveChart: dataForm.switchFrom }">
+      <canvas id="canvas2">{{ chart[2] }}</canvas>
+      <app-change-form (FormEiit)="saveFormData($event, 2)" />
+    </div>
+    <div class="chartBox" [ngClass]="{ disactiveChart: dataForm.switchFrom }">
+      <canvas id="canvas3">{{ chart[3] }}</canvas>
+      <app-change-form (FormEiit)="saveFormData($event, 3)" />
+    </div>
+    <div class="chartBox" [ngClass]="{ disactiveChart: !dataForm.switchFrom }">
+      <canvas id="canvas4">{{ chart[4] }}</canvas>
+      <app-change-form (FormEiit)="saveFormData($event, 4)" />
+    </div>
+    <div class="chartBox" [ngClass]="{ disactiveChart: !dataForm.switchFrom }">
+      <canvas id="canvas5">{{ chart[5] }}</canvas>
+      <app-change-form (FormEiit)="saveFormData($event, 5)" />
+    </div>
+  </article>
+  <article class="buttonArticle">
+    <div class="buttonBox">
+      <app-run-button
+        [isActive]="StartButton"
+        [titleButton]="buttonName[0]"
+        (click)="start()"
+      />
+      <app-run-button
+        [isActive]="RestartButton"
+        [titleButton]="buttonName[1]"
+        (click)="restart()"
+      />
+      <app-run-button
+        [isActive]="StopButton"
+        [titleButton]="buttonName[2]"
+        (click)="stop()"
+      />
+    </div>
+  </article>
+  <article class="descriptionArticle">
+    <h4>
+      Opis
+      <app-show-button
+        [text]="'rozwiń'"
+        (isClick)="changeDescription($event)"
+      />
+    </h4>
+    <aside [ngClass]="{ disactiveChart: !showDescription }">
+      <p>Natężenie przepływu możemy określić na kilka sposobów.</p>
+      <ul>
+        <li>Q1 odczytane z miernika przy stanowisku: 12.5</li>
+        <li>
+          Q4 obliczone jako wymnożona prędkość, powierzchnia przekroju rury,
+          oraz czas: 12
+        </li>
+      </ul>
+      <p>
+        Ustalając Q2 = Q1 obliczyliśmy prędkość obrotową [obr/min] poprzez
+        podzielenie natężenia przepływu przez ilość płynu przepchniętego na
+        jeden obrót i otrzymaliśmy 1250
+      </p>
+    </aside>
+  </article>
+</section>
