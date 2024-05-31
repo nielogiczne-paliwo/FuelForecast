@@ -1,24 +1,25 @@
 section {
-  width: 100%;
+  width: 85%;
   min-height: 60svh;
-  border: 2px solid #d0baf5;
+  border: 1px solid #d0baf5;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5% 0;
+  margin-left: 7.5%;
 }
 .mainFrame {
-  width: 70%;
+  width: 85%;
   min-height: 65svh;
-  background-color: #1b1329;
+  background-color: rgba(119, 0, 139, 0.25);
   border-radius: 20px;
   display: flex;
 }
 .textFrame {
   margin: 30px;
-  width: 90%;
-  padding: 10px;
+  width: 50%;
+  padding: 20px;
 }
 h1 {
   margin: 20px 0 40px;

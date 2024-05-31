@@ -1,7 +1,7 @@
 button {
   border-radius: 8px;
   padding: 8px 20px;
-  background-color: #9765e7;
+  background-color: #bb69c9;
   border: 0px solid;
   transition: 0.2s ease-in-out;
   font-size: 1rem;
@@ -9,12 +9,12 @@ button {
 }
 
 .active {
-  background-color: #a9a6af;
+  background-color: #2c066a;
   transition: 0.2s ease-in-out;
 }
 
 button:hover {
-  background-color: #2c066a;
+  background-color: #8c7e8e;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
