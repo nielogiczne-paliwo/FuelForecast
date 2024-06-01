@@ -10,9 +10,14 @@
       <h3>lub</h3>
       <div class="abc">
         <h2>Wprowadź dane ręcznie:</h2>
-        <app-button [isActive]="true" [buttonText]="'Kliknij tutaj'" />
+        <app-button
+          [isActive]="true"
+          [buttonText]="'Kliknij tutaj'"
+          (click)="activform(true)"
+        />
       </div>
       <app-button [buttonText]="'Dalej > >'" [isActive]="false" />
     </div>
   </div>
+  <app-fuel-condition [isActive]="activeForm" (active)="activform($event)" />
 </section>
