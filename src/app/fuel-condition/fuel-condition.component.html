@@ -1,17 +1,34 @@
-<section>
-  <h1>Formularz abc</h1>
-  <form [formGroup]="myForm">
-    <div>
-      <label for="dateStart">Od:</label>
-      <input type="date" id="dateStart" formControlName="dateStart" />
+<section [ngClass]="{ active: isActive }">
+  <article>
+    <div class="closeButton">
+      <button (click)="closeForm()">X</button>
+      <h1>Formularz abc</h1>
     </div>
-    <div>
-      <label for="dateStop">Do:</label>
-      <input type="date" id="dateStop" formControlName="dateStop" />
-    </div>
-
-    <button (submit)="(onSubmit)">Zapisz</button>
-  </form>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <div class="inputDiv">
+        <label for="dateStart">Od:</label>
+        <input type="date" id="dateStart" formControlName="dateStart" />
+      </div>
+      <div class="inputDiv">
+        <label for="dateStop">Do:</label>
+        <input type="date" id="dateStop" formControlName="dateStop" />
+      </div>
+      <div class="fuelCondition" *ngFor="let items of petrol">
+        <h2>{{ items }}</h2>
+        <div class="inputDiv" *ngFor="let item of dataStructure">
+          <label for="{{ items + item }}">{{ item }}</label>
+          <input
+            type="number"
+            id="{{ items + item }}"
+            formControlName="{{ items + item }}"
+          />
+        </div>
+      </div>
+      <div class="buttonDiv">
+        <app-button [buttonText]="'Zapisz'" [isActive]="true" type="onSubmit" />
+      </div>
+    </form>
+  </article>
 </section>
 
 <!-- <div>
