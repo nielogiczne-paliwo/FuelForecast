@@ -5,7 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { stationData } from '../interface/interface';
+import { stationData } from '../../interface/interface';
 
 @Component({
   selector: 'app-fuel-condition',
