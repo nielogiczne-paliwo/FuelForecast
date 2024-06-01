@@ -16,7 +16,11 @@
           (click)="activform(true)"
         />
       </div>
-      <app-button [buttonText]="'Dalej > >'" [isActive]="false" />
+      <app-button
+        [buttonText]="'Dalej > >'"
+        [isActive]="false"
+        (click)="nextView()"
+      />
     </div>
   </div>
   <app-fuel-condition [isActive]="activeForm" (active)="activform($event)" />

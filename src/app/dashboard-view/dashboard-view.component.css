@@ -1,0 +1,11 @@
+section {
+  width: 85%;
+  min-height: 60svh;
+  border: 1px solid #d0baf5;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 0;
+  margin-left: 7.5%;
+}

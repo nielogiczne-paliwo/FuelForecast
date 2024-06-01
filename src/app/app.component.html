@@ -4,5 +4,9 @@
     [ngClass]="{ active: activeView == 1 }"
     (clickNextButton)="setActiveactiveView($event)"
   />
-  <app-second-view [ngClass]="{ active: activeView == 2 }" />
+  <app-second-view
+    [ngClass]="{ active: activeView == 2 }"
+    (clickNextButton)="setActiveactiveView($event)"
+  />
+  <app-dashboard-view [ngClass]="{ active: activeView == 3 }" />
 </main>

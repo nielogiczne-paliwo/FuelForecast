@@ -4,7 +4,8 @@ main {
   padding: 0 10%;
 }
 app-second-view,
-app-first-view {
+app-first-view,
+app-dashboard-view {
   display: none;
   transform: translateX(-1000px);
   transition: 2s ease-in-out;
