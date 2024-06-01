@@ -9,6 +9,7 @@ import { LogoComponent } from './logo/logo.component';
 import { SecondViewComponent } from './second-view/second-view.component';
 import { FuelConditionComponent } from './fuel-condition/fuel-condition.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LogoComponent,
     SecondViewComponent,
     FuelConditionComponent,
+    DashboardViewComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
