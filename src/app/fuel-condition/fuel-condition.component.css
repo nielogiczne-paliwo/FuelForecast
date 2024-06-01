@@ -1,0 +1,30 @@
+section {
+  width: 100%;
+}
+h1 {
+  color: #fff;
+  margin-right: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+form div {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  border-radius: 8px;
+  padding: 8px 20px;
+  background-color: #bb69c9;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+  font-size: 1rem;
+  color: #fff;
+}

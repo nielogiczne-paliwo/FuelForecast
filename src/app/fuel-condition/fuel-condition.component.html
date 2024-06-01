@@ -1,3 +1,28 @@
 <section>
-  <form [formGroup]="myForm"></form>
+  <h1>Formularz abc</h1>
+  <form [formGroup]="myForm">
+    <div>
+      <label for="dateStart">Od:</label>
+      <input type="date" id="dateStart" formControlName="dateStart" />
+    </div>
+    <div>
+      <label for="dateStop">Do:</label>
+      <input type="date" id="dateStop" formControlName="dateStop" />
+    </div>
+
+    <button (submit)="(onSubmit)">Zapisz</button>
+  </form>
 </section>
+
+<!-- <div>
+  <label for="dateStart">Od: </label>
+  <input type="date" id="dateStart" formControlName="dateStart" />
+</div>
+<div>
+  <label for="dateStop">Do: </label>
+  <input type="date" id="dateStop" formControlName="dateStop" />
+</div>
+<div>
+  <label for="ULG95MAX">Do: </label>
+  <input type="number" id="ULG95MAX" formControlName="ULG95MAX" />
+</div> -->
