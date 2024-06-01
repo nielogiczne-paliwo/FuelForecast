@@ -19,3 +19,7 @@ export interface stationData {
   ULTSU: fuel;
   ULTDK: fuel;
 }
+
+export interface Json {
+  deliveries: delivierData[];
+}
