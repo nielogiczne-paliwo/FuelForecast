@@ -1,3 +1,8 @@
+main {
+  background-color: #1f0523;
+  min-height: 95svh;
+  padding: 0 10%;
+}
 section {
   width: 85%;
   min-height: 60svh;

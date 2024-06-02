@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { DataFormService } from '../service/data-form.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-second-view',
@@ -12,7 +13,7 @@ export class SecondViewComponent {
   activeForm: boolean;
   activeError: boolean;
 
-  constructor(private dataForm: DataFormService) {
+  constructor(private dataForm: DataFormService, private router: Router) {
     this.activeForm = false;
     this.activeError = false;
   }
@@ -27,6 +28,6 @@ export class SecondViewComponent {
 
   nextView() {
     if (!this.dataForm.getSaveForm()) this.activeError = true;
-    else this.clickNextButton.emit(3);
+    else this.router.navigate(['dashboard']);
   }
 }

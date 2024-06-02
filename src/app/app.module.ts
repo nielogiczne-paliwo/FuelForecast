@@ -11,7 +11,7 @@ import { FuelConditionComponent } from './fuel-condition/fuel-condition.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 import { ErrorMessageComponent } from './error-message/error-message.component';
-
+import { AppRoutingModule } from './app-routing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,7 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
     DashboardViewComponent,
     ErrorMessageComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
