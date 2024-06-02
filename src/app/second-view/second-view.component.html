@@ -1,31 +1,34 @@
-<section>
-  <div class="mainFrame">
-    <div class="textFrame">
-      <app-logo />
-      <h1>Wprowadź dane</h1>
-      <div class="abc">
-        <h2>Wybierz plik:</h2>
-        <app-button [isActive]="true" [buttonText]="'Kliknij tutaj'" />
-      </div>
-      <h3>lub</h3>
-      <div class="abc">
-        <h2>Wprowadź dane ręcznie:</h2>
+<main>
+  <app-header-navbar />
+  <section>
+    <div class="mainFrame">
+      <div class="textFrame">
+        <app-logo />
+        <h1>Wprowadź dane</h1>
+        <div class="abc">
+          <h2>Wybierz plik:</h2>
+          <app-button [isActive]="true" [buttonText]="'Kliknij tutaj'" />
+        </div>
+        <h3>lub</h3>
+        <div class="abc">
+          <h2>Wprowadź dane ręcznie:</h2>
+          <app-button
+            [isActive]="true"
+            [buttonText]="'Kliknij tutaj'"
+            (click)="activform(true)"
+          />
+        </div>
         <app-button
-          [isActive]="true"
-          [buttonText]="'Kliknij tutaj'"
-          (click)="activform(true)"
+          [buttonText]="'Dalej > >'"
+          [isActive]="false"
+          (click)="nextView()"
         />
       </div>
-      <app-button
-        [buttonText]="'Dalej > >'"
-        [isActive]="false"
-        (click)="nextView()"
-      />
     </div>
-  </div>
-  <app-fuel-condition [isActive]="activeForm" (active)="activform($event)" />
-  <app-error-message
-    [isActive]="activeError"
-    (active)="activeErrorMessage($event)"
-  />
-</section>
+    <app-fuel-condition [isActive]="activeForm" (active)="activform($event)" />
+    <app-error-message
+      [isActive]="activeError"
+      (active)="activeErrorMessage($event)"
+    />
+  </section>
+</main>
