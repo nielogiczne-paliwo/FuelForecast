@@ -5,10 +5,13 @@ import { stationData } from '../interface/interface';
   providedIn: 'root',
 })
 export class DataFormService {
-  private anotherDate: Date = new Date(2000, 0, 0);
+  private anotherDate: Date;
+  private saveForm: boolean;
   private dataForm: stationData;
 
   constructor() {
+    this.saveForm = false;
+    this.anotherDate = new Date(2000, 0, 0);
     this.dataForm = {
       dateStart: this.anotherDate,
       dateEnd: this.anotherDate,
@@ -39,5 +42,9 @@ export class DataFormService {
   }
   setDataForm(prop: stationData) {
     this.dataForm = prop;
+    this.saveForm = true;
+  }
+  getSaveForm(): boolean {
+    return this.saveForm;
   }
 }
