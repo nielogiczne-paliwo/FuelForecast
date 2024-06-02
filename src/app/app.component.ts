@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   activeView: number;
   constructor() {
-    this.activeView = 2;
+    this.activeView = 1;
   }
   setActiveactiveView(event: number) {
     this.activeView = event;
