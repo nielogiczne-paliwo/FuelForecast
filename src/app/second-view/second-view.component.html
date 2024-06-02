@@ -24,4 +24,8 @@
     </div>
   </div>
   <app-fuel-condition [isActive]="activeForm" (active)="activform($event)" />
+  <app-error-message
+    [isActive]="activeError"
+    (active)="activeErrorMessage($event)"
+  />
 </section>
