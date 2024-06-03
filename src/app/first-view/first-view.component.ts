@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-first-view',
   templateUrl: './first-view.component.html',
   styleUrls: ['./first-view.component.css'],
 })
 export class FirstViewComponent {
-  @Output() clickNextButton = new EventEmitter<number>();
+  constructor(private router: Router) {}
 
   nextView() {
-    this.clickNextButton.emit(2);
+    this.router.navigate(['selectData']);
   }
 }

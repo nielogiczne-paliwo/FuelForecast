@@ -1,8 +1,1 @@
-<main>
-  <app-header-navbar />
-  <app-first-view
-    [ngClass]="{ active: activeView == 1 }"
-    (clickNextButton)="setActiveactiveView($event)"
-  />
-  <app-second-view [ngClass]="{ active: activeView == 2 }" />
-</main>
+<router-outlet></router-outlet>

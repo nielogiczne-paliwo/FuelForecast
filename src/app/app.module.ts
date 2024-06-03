@@ -9,7 +9,9 @@ import { LogoComponent } from './logo/logo.component';
 import { SecondViewComponent } from './second-view/second-view.component';
 import { FuelConditionComponent } from './fuel-condition/fuel-condition.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
+import { ErrorMessageComponent } from './error-message/error-message.component';
+import { AppRoutingModule } from './app-routing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +21,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     LogoComponent,
     SecondViewComponent,
     FuelConditionComponent,
+    DashboardViewComponent,
+    ErrorMessageComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

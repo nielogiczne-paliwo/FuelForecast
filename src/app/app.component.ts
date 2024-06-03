@@ -5,12 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  activeView: number;
-  constructor() {
-    this.activeView = 1;
-  }
-  setActiveactiveView(event: number) {
-    this.activeView = event;
-  }
-}
+export class AppComponent {}
