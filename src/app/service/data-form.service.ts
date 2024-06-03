@@ -40,11 +40,38 @@ export class DataFormService {
   getDataForm(): stationData {
     return this.dataForm;
   }
-  setDataForm(prop: stationData) {
+  setDataForm(prop: stationData): void {
     this.dataForm = prop;
     this.saveForm = true;
   }
   getSaveForm(): boolean {
     return this.saveForm;
+  }
+  setRestartForm(): void {
+    this.saveForm = false;
+    this.dataForm = {
+      dateStart: this.anotherDate,
+      dateEnd: this.anotherDate,
+      ULG95: {
+        maxStock: 0,
+        capacisty: 0,
+        inputData: 0,
+      },
+      DK: {
+        maxStock: 0,
+        capacisty: 0,
+        inputData: 0,
+      },
+      ULTSU: {
+        maxStock: 0,
+        capacisty: 0,
+        inputData: 0,
+      },
+      ULTDK: {
+        maxStock: 0,
+        capacisty: 0,
+        inputData: 0,
+      },
+    };
   }
 }
