@@ -16,6 +16,7 @@ export class SecondViewComponent {
   constructor(private dataForm: DataFormService, private router: Router) {
     this.activeForm = false;
     this.activeError = false;
+    dataForm.setRestartForm();
   }
 
   activform(value: boolean): void {
