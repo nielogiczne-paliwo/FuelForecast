@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 import { ErrorMessageComponent } from './error-message/error-message.component';
 import { AppRoutingModule } from './app-routing.component';
+import { LoadFileButtonComponent } from './load-file-button/load-file-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { AppRoutingModule } from './app-routing.component';
     FuelConditionComponent,
     DashboardViewComponent,
     ErrorMessageComponent,
+    LoadFileButtonComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
