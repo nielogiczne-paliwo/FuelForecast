@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ErrorMessageComponent {
   @Input() isActive?: boolean;
+  @Input() text?: string;
   @Output() active = new EventEmitter<boolean>();
 
   errorMessage() {
