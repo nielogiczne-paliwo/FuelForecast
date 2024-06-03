@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { DataFormService } from '../service/data-form.service';
 import { Router } from '@angular/router';
+import { FileDataService } from '../service/file-data.service';
 
 @Component({
   selector: 'app-second-view',
@@ -13,7 +14,11 @@ export class SecondViewComponent {
   activeForm: boolean;
   activeError: boolean;
 
-  constructor(private dataForm: DataFormService, private router: Router) {
+  constructor(
+    private dataForm: DataFormService,
+    private router: Router,
+    private fileData: FileDataService
+  ) {
     this.activeForm = false;
     this.activeError = false;
     dataForm.setRestartForm();
@@ -28,7 +33,8 @@ export class SecondViewComponent {
   }
 
   nextView() {
-    if (!this.dataForm.getSaveForm()) this.activeError = true;
+    if (!this.dataForm.getSaveForm() && !this.fileData.getLoadFile())
+      this.activeError = true;
     else this.router.navigate(['dashboard']);
   }
 }
