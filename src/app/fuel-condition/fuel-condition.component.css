@@ -88,3 +88,8 @@ input {
   display: flex;
   justify-content: center;
 }
+app-close-button {
+  position: relative;
+  top: -65svh;
+  right: -94%;
+}

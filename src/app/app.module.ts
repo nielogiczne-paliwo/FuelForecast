@@ -13,6 +13,7 @@ import { DashboardViewComponent } from './dashboard-view/dashboard-view.componen
 import { ErrorMessageComponent } from './error-message/error-message.component';
 import { AppRoutingModule } from './app-routing.component';
 import { LoadFileButtonComponent } from './load-file-button/load-file-button.component';
+import { CloseButtonComponent } from './close-button/close-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { LoadFileButtonComponent } from './load-file-button/load-file-button.com
     DashboardViewComponent,
     ErrorMessageComponent,
     LoadFileButtonComponent,
+    CloseButtonComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
