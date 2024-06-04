@@ -8,7 +8,7 @@ export interface delivierData {
 }
 export interface fuel {
   maxStock: number;
-  capacisty: number;
+  capacity: number;
   inputData: number;
 }
 export interface stationData {

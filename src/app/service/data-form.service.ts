@@ -17,22 +17,22 @@ export class DataFormService {
       dateEnd: this.anotherDate,
       ULG95: {
         maxStock: 0,
-        capacisty: 0,
+        capacity: 0,
         inputData: 0,
       },
       DK: {
         maxStock: 0,
-        capacisty: 0,
+        capacity: 0,
         inputData: 0,
       },
       ULTSU: {
         maxStock: 0,
-        capacisty: 0,
+        capacity: 0,
         inputData: 0,
       },
       ULTDK: {
         maxStock: 0,
-        capacisty: 0,
+        capacity: 0,
         inputData: 0,
       },
     };
@@ -54,22 +54,22 @@ export class DataFormService {
       dateEnd: this.anotherDate,
       ULG95: {
         maxStock: 0,
-        capacisty: 0,
+        capacity: 0,
         inputData: 0,
       },
       DK: {
         maxStock: 0,
-        capacisty: 0,
+        capacity: 0,
         inputData: 0,
       },
       ULTSU: {
         maxStock: 0,
-        capacisty: 0,
+        capacity: 0,
         inputData: 0,
       },
       ULTDK: {
         maxStock: 0,
-        capacisty: 0,
+        capacity: 0,
         inputData: 0,
       },
     };
