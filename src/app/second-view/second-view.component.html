@@ -7,9 +7,10 @@
         <h1>Wprowadź dane</h1>
         <div class="abc">
           <h2>Wybierz plik:</h2>
-          <app-load-file-button 
-          [isActive]="true"
-          [buttonText]="'Kliknij tutaj'" />
+          <app-load-file-button
+            [isActive]="true"
+            [buttonText]="'Kliknij tutaj'"
+          />
         </div>
         <h3>lub</h3>
         <div class="abc">
@@ -30,7 +31,8 @@
     <app-fuel-condition [isActive]="activeForm" (active)="activform($event)" />
     <app-error-message
       [isActive]="activeError"
-      [text]="'Załaduj plik albo wprowadź dane do formularza'"
+      [title]="'BRAK DANYCH'"
+      [text]="'Wybierz plik lub wprowadź dane ręcznie'"
       (active)="activeErrorMessage($event)"
     />
   </section>
