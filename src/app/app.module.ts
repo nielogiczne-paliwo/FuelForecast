@@ -10,6 +10,7 @@ import { SecondViewComponent } from './second-view/second-view.component';
 import { FuelConditionComponent } from './fuel-condition/fuel-condition.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
+import { WykresKolowyComponent } from './wykres-kolowy/wykres-kolowy.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DashboardViewComponent } from './dashboard-view/dashboard-view.componen
     SecondViewComponent,
     FuelConditionComponent,
     DashboardViewComponent,
+    WykresKolowyComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
