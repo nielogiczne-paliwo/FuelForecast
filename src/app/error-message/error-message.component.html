@@ -1,0 +1,7 @@
+<section [ngClass]="{ active: isActive }">
+  <article>
+    <h3>{{ title }}</h3>
+    <p>{{ text }}</p>
+    <app-button (click)="errorMessage()" [buttonText]="'Zamknij X'" />
+  </article>
+</section>

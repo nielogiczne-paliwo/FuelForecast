@@ -1,21 +1,26 @@
-<section>
-  <div class="mainFrame">
-    <div class="textFrame">
-      <app-logo />
-      <h1>Twój partner przy <span>prognozowaniu</span> <br />dostaw paliwa</h1>
-      <p>Wprowadź dane i zobacz szczegóły dotyczące dostaw</p>
-      <app-button
-        [buttonText]="'Dalej > >'"
-        [isActive]="false"
-        (click)="nextView()"
-      />
-    </div>
-    <div class="imageDiv">
-      <div class="imageCont">
-        <figure>
-          <img src="./assets/firstViewImg.png" alt="petrol station" />
-        </figure>
+<main>
+  <app-header-navbar />
+  <section>
+    <div class="mainFrame">
+      <div class="textFrame">
+        <app-logo />
+        <h1>
+          Twój partner przy <span>prognozowaniu</span> <br />dostaw paliwa
+        </h1>
+        <p>Wprowadź dane i zobacz szczegóły dotyczące dostaw</p>
+        <app-button
+          [buttonText]="'Dalej > >'"
+          [isActive]="false"
+          (click)="nextView()"
+        />
+      </div>
+      <div class="imageDiv">
+        <div class="imageCont">
+          <figure>
+            <img src="./assets/firstViewImg.png" alt="petrol station" />
+          </figure>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>

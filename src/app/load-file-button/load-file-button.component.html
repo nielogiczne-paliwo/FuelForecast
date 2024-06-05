@@ -1,0 +1,17 @@
+<button [ngClass]="{ active: isActive == true }" (click)="file.click()">
+  {{ buttonText }}
+</button>
+<input
+  type="file"
+  accept="application/JSON"
+  style="display: none"
+  (change)="loadData($event)"
+  #file
+/>
+<app-error-message
+  [isActive]="isError"
+  [text]="errorText"
+  [title]="errorTitle"
+  (active)="activeErrorMessage($event)"
+/>
+<!-- <h1>{{data.length === 0 ? "nic" : data[1].date}}</h1> -->

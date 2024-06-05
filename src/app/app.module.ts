@@ -10,6 +10,10 @@ import { SecondViewComponent } from './second-view/second-view.component';
 import { FuelConditionComponent } from './fuel-condition/fuel-condition.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
+import { ErrorMessageComponent } from './error-message/error-message.component';
+import { AppRoutingModule } from './app-routing.component';
+import { LoadFileButtonComponent } from './load-file-button/load-file-button.component';
+import { CloseButtonComponent } from './close-button/close-button.component';
 import { WykresKolowyComponent } from './wykres-kolowy/wykres-kolowy.component';
 
 @NgModule({
@@ -23,8 +27,11 @@ import { WykresKolowyComponent } from './wykres-kolowy/wykres-kolowy.component';
     FuelConditionComponent,
     DashboardViewComponent,
     WykresKolowyComponent,
+    ErrorMessageComponent,
+    LoadFileButtonComponent,
+    CloseButtonComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,8 @@
+button {
+  background: none;
+  border: 0px;
+  font-size: 2rem;
+}
+button:hover {
+  cursor: pointer;
+}

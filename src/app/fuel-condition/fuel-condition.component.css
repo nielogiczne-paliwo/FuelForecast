@@ -1,78 +1,95 @@
 section {
-  width: 125%;
+  width: 100%;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.25);
-  right: -12.53%;
-  top: -110px;
+  right: 0;
+  top: 0;
   z-index: -1;
   height: 100svh;
   opacity: 0;
 }
 .active {
-  width: 125%;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.25);
   display: flex;
   opacity: 1;
   z-index: 1;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   transition: opacity 1s ease;
 }
 article {
-  width: 30%;
-  background-color: rgba(119, 0, 139, 1);
-}
-.closeButton {
-  display: flex;
-  width: 100%;
-}
-.closeButton button {
-  position: relative;
-  margin-left: 10%;
-  font-size: 2em;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-}
-.closeButton button:hover {
-  cursor: pointer;
+  margin-top: 95px;
+  height: 75svh;
+  width: 64%;
+  background-color: #d9d9d9;
+  border-radius: 20px;
 }
 h1 {
-  color: #fff;
-  margin: 30px 20px 30px 0;
+  color: #77008b;
+  margin: 30px 20px;
   font-size: 1.5rem;
   text-align: center;
   width: 100%;
 }
 form {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
-.inputDiv {
+.dataForm {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.fuelConditionDiv {
   width: 80%;
-  padding: 0 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.fuelCondition {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.inputDiv {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
 h2 {
-  text-align: center;
-  margin-top: 20px;
-  color: #fff;
+  text-align: left;
+  font-size: 1.2rem;
+  color: #1f0523;
+  width: 100%;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 label {
-  color: #fff;
+  color: #1f0523;
   font-size: 1rem;
   line-height: 19px;
+  margin-right: 10px;
 }
 input {
   border-radius: 5px;
-  border: 1px solid #d0baf5;
+  border: 0px solid #d0baf5;
   padding: 2px;
-  width: 40%;
+  width: 70%;
   height: 15px;
+  background-color: #8c7e8e;
 }
+
 .buttonDiv {
+  width: 100%;
   margin-top: 20px;
   display: flex;
   justify-content: center;
+}
+app-close-button {
+  position: relative;
+  top: -65svh;
+  right: -94%;
 }
