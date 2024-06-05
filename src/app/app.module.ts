@@ -14,6 +14,7 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
 import { AppRoutingModule } from './app-routing.component';
 import { LoadFileButtonComponent } from './load-file-button/load-file-button.component';
 import { CloseButtonComponent } from './close-button/close-button.component';
+import { DeliveryTableComponent } from './delivery-table/delivery-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { CloseButtonComponent } from './close-button/close-button.component';
     ErrorMessageComponent,
     LoadFileButtonComponent,
     CloseButtonComponent,
+    DeliveryTableComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
