@@ -14,6 +14,8 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
 import { AppRoutingModule } from './app-routing.component';
 import { LoadFileButtonComponent } from './load-file-button/load-file-button.component';
 import { CloseButtonComponent } from './close-button/close-button.component';
+import { WykresKolowyComponent } from './wykres-kolowy/wykres-kolowy.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,7 @@ import { CloseButtonComponent } from './close-button/close-button.component';
     SecondViewComponent,
     FuelConditionComponent,
     DashboardViewComponent,
+    WykresKolowyComponent,
     ErrorMessageComponent,
     LoadFileButtonComponent,
     CloseButtonComponent,
