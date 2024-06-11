@@ -28,7 +28,7 @@ export class DashboardViewService {
     return deliverFuel;
   }
 
-  setTableData() {
+  private setTableData() {
     let TableData: delivierData[];
     TableData = this.data;
     TableData.forEach((e, i) => {
@@ -37,6 +37,9 @@ export class DashboardViewService {
       });
     });
     this.tableData = TableData;
+  }
+  getTableData(): delivierData[] {
+    return this.tableData;
   }
   getMoreDeliver(): string[] {
     let moreDeliver: string[] = [];

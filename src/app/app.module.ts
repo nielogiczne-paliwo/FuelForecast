@@ -17,6 +17,7 @@ import { CloseButtonComponent } from './close-button/close-button.component';
 import { WykresKolowyComponent } from './wykres-kolowy/wykres-kolowy.component';
 import { MoreDeliverComponent } from './more-deliver/more-deliver.component';
 
+import { DeliveryTableComponent } from './delivery-table/delivery-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { MoreDeliverComponent } from './more-deliver/more-deliver.component';
     LoadFileButtonComponent,
     CloseButtonComponent,
     MoreDeliverComponent,
+    DeliveryTableComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
