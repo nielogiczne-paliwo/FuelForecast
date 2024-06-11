@@ -2,6 +2,7 @@ main {
   background-color: #1f0523;
   min-height: 95svh;
   padding: 0 10%;
+  margin-bottom: 30px;
 }
 section {
   width: 85%;
@@ -13,4 +14,9 @@ section {
   align-items: center;
   padding: 5% 0;
   margin-left: 7.5%;
+  flex-wrap: wrap;
+}
+div {
+  border: 5px solid white;
+  margin-bottom: 30px;
 }
