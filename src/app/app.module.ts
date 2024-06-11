@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.component';
 import { LoadFileButtonComponent } from './load-file-button/load-file-button.component';
 import { CloseButtonComponent } from './close-button/close-button.component';
 import { WykresKolowyComponent } from './wykres-kolowy/wykres-kolowy.component';
+import { MoreDeliverComponent } from './more-deliver/more-deliver.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { WykresKolowyComponent } from './wykres-kolowy/wykres-kolowy.component';
     ErrorMessageComponent,
     LoadFileButtonComponent,
     CloseButtonComponent,
+    MoreDeliverComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],

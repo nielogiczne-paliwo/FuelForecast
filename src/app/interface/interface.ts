@@ -19,11 +19,3 @@ export interface stationData {
   ULTSU: fuel;
   ULTDK: fuel;
 }
-export interface moreDeliver {
-  date: string;
-  ULG95: number;
-  DK: number;
-  ULTSU: number;
-  ULTDK: number;
-  moreDeliver?: boolean;
-}
