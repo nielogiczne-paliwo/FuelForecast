@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { delivierData } from '../interface/interface';
+import { delivierData, moreDeliver } from '../interface/interface';
 import { SessionService } from './session.service';
 
 @Injectable({
@@ -7,9 +7,9 @@ import { SessionService } from './session.service';
 })
 export class DashboardViewService {
   private data: delivierData[];
+  private tableData: delivierData[] = [];
   constructor(SessionService: SessionService) {
     this.data = SessionService.getDataSession();
-    console.log(this.getTableData());
   }
   getSumDeliveryFuel(): { [key: string]: number } {
     let deliverFuel: { [key: string]: number } = {
@@ -35,6 +35,16 @@ export class DashboardViewService {
         if (e1.date == e.date && i != j) e1.moreDeliver = true;
       });
     });
-    return TableData;
+    this.tableData = TableData;
+    return this.tableData;
+  }
+  getMoreDeliver(): string[] {
+    let moreDeliver: string[] = [];
+    this.tableData.forEach((e) => {
+      if (e.moreDeliver) {
+        moreDeliver.push(e.date.toDateString());
+      }
+    });
+    return moreDeliver;
   }
 }
