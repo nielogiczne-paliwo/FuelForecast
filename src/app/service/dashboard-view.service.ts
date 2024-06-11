@@ -7,9 +7,10 @@ import { SessionService } from './session.service';
 })
 export class DashboardViewService {
   private data: delivierData[];
+  private tableData: delivierData[] = [];
   constructor(SessionService: SessionService) {
     this.data = SessionService.getDataSession();
-    console.log(this.getTableData());
+    this.setTableData();
   }
   getSumDeliveryFuel(): { [key: string]: number } {
     let deliverFuel: { [key: string]: number } = {
@@ -27,7 +28,7 @@ export class DashboardViewService {
     return deliverFuel;
   }
 
-  getTableData(): delivierData[] {
+  setTableData() {
     let TableData: delivierData[];
     TableData = this.data;
     TableData.forEach((e, i) => {
@@ -35,6 +36,14 @@ export class DashboardViewService {
         if (e1.date == e.date && i != j) e1.moreDeliver = true;
       });
     });
-    return TableData;
+    this.tableData = TableData;
+  }
+  getMoreDeliver(): string[] {
+    let moreDeliver: string[] = [];
+    this.tableData.forEach((e) => {
+      if (e.moreDeliver && !moreDeliver.includes(e.date.toString()))
+        moreDeliver.push(e.date.toString());
+    });
+    return moreDeliver;
   }
 }
