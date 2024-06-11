@@ -33,6 +33,7 @@ import { DeliveryTableComponent } from './delivery-table/delivery-table.componen
     LoadFileButtonComponent,
     CloseButtonComponent,
     MoreDeliverComponent,
+    DeliveryTableComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],

@@ -19,4 +19,5 @@ section {
 div {
   border: 5px solid white;
   margin-bottom: 30px;
+  width: 100%;
 }
