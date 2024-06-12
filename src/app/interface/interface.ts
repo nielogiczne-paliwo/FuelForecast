@@ -19,3 +19,9 @@ export interface stationData {
   ULTSU: fuel;
   ULTDK: fuel;
 }
+export interface weekData {
+  ULG95: number;
+  DK: number;
+  ULTSU: number;
+  ULTDK: number;
+}

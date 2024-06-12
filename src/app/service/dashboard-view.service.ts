@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { delivierData } from '../interface/interface';
+import { delivierData, weekData } from '../interface/interface';
 import { SessionService } from './session.service';
 
 @Injectable({
@@ -8,6 +8,7 @@ import { SessionService } from './session.service';
 export class DashboardViewService {
   private data: delivierData[];
   private tableData: delivierData[] = [];
+  private dayofTheWeek: number[] = [];
   constructor(SessionService: SessionService) {
     this.data = SessionService.getDataSession();
     this.setTableData();
@@ -48,5 +49,36 @@ export class DashboardViewService {
         moreDeliver.push(e.date.toString());
     });
     return moreDeliver;
+  }
+
+  sumByDatOfTheWeek(): weekData[] {
+    let dataFormat: weekData[] = [];
+    for (let i = 0; i < 7; i++) {
+      dataFormat.push({
+        ULG95: 0,
+        DK: 0,
+        ULTSU: 0,
+        ULTDK: 0,
+      });
+    }
+    this.data.forEach((e) => {
+      let dateToString = e.date.toString().split('.');
+      let newDate = new Date(
+        Date.UTC(
+          parseInt(dateToString[2]),
+          parseInt(dateToString[1]),
+          parseInt(dateToString[0]),
+          0,
+          0,
+          0
+        )
+      );
+      let numberDay = (newDate.getUTCDay() + 4) % 7;
+      dataFormat[numberDay].DK += e.DK;
+      dataFormat[numberDay].ULG95 += e.ULG95;
+      dataFormat[numberDay].ULTDK += e.ULTDK;
+      dataFormat[numberDay].ULTSU += e.ULTSU;
+    });
+    return dataFormat;
   }
 }
