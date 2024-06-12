@@ -18,6 +18,7 @@ import { WykresKolowyComponent } from './wykres-kolowy/wykres-kolowy.component';
 import { MoreDeliverComponent } from './more-deliver/more-deliver.component';
 
 import { DeliveryTableComponent } from './delivery-table/delivery-table.component';
+import { SumByDayOFTheWeekComponent } from './sum-by-day-ofthe-week/sum-by-day-ofthe-week.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { DeliveryTableComponent } from './delivery-table/delivery-table.componen
     CloseButtonComponent,
     MoreDeliverComponent,
     DeliveryTableComponent,
+    SumByDayOFTheWeekComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
