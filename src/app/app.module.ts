@@ -19,6 +19,7 @@ import { MoreDeliverComponent } from './more-deliver/more-deliver.component';
 
 import { DeliveryTableComponent } from './delivery-table/delivery-table.component';
 import { SumByDayOFTheWeekComponent } from './sum-by-day-ofthe-week/sum-by-day-ofthe-week.component';
+import { SumFuelByDayComponent } from './sum-fuel-by-day/sum-fuel-by-day.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { SumByDayOFTheWeekComponent } from './sum-by-day-ofthe-week/sum-by-day-o
     MoreDeliverComponent,
     DeliveryTableComponent,
     SumByDayOFTheWeekComponent,
+    SumFuelByDayComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
