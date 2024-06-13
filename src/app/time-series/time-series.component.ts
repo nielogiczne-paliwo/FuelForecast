@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { delivierData } from '../interface/interface';
 import { DashboardViewService } from '../service/dashboard-view.service';
 import { Chart } from 'chart.js';
+import { min } from 'rxjs';
 
 @Component({
   selector: 'app-time-series',
@@ -11,26 +12,36 @@ import { Chart } from 'chart.js';
 export class TimeSeriesComponent {
   private chart: any;
   loadedData: delivierData[] = [];
-  delivieriesEachDay: {label: string; data: number[]}[] = [];
-  days: Date[] = [];
+  delivieriesEachDay: {label: string; data: {x: Date, y: number}[]}[] = [];
+  allDates: number[] = [];
+  minDate: Date = new Date('01.01.1900');
+  maxDate: Date = new Date('31.12.2500');
   constructor(DashboardService: DashboardViewService){
     this.loadedData = DashboardService.getTableData();
     console.log(this.loadedData);
     this.setDataSet();
+    this.setRangeOfDays();
+    console.log(this.allDates)
+    console.log(new Date(1452466800000))
   }
 
+  setRangeOfDays(): void {
+    this.minDate = new Date(Math.min(...this.allDates));
+    this.maxDate = new Date(Math.max(...this.allDates));
+  }
+
+
   setDataSet(): void {
-    let dates: Date[] = [];
-    let DK: number[] = [];
-    let ULG95: number[] = [];
-    let ULTDK: number[] = [];
-    let ULTSU: number[] = [];
+    let DK: {x: Date, y: number}[] = [];
+    let ULG95: {x: Date, y: number}[] = [];
+    let ULTDK: {x: Date, y: number}[] = [];
+    let ULTSU: {x: Date, y: number}[] = [];
     this.loadedData.forEach((i) =>{
-      dates.push(i.date);
-      DK.push(i.DK);
-      ULG95.push(i.ULG95);
-      ULTDK.push(i.ULTDK);
-      ULTSU.push(i.ULTSU);
+      DK.push({x: i.date, y: i.DK});
+      ULG95.push({x: i.date, y: i.ULG95});
+      ULTDK.push({x: i.date, y: i.ULTDK});
+      ULTSU.push({x: i.date, y: i.ULTSU});
+      this.allDates.push(new Date(i.date).valueOf())
     });
     
     this.delivieriesEachDay = [
@@ -51,15 +62,48 @@ export class TimeSeriesComponent {
         data: ULTSU,
       },
     ];
-    this.days = dates; 
   }
 
   ngOnInit(): void {
     this.chart = new Chart('timeSeriesOfDel', {
       type: 'line',
       data: {
-        labels: this.days,
         datasets: this.delivieriesEachDay,
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+          x: {
+          }
+        },
+        plugins: {
+          title: {
+            font: {
+              size: 40,
+            },
+            display: true,
+            text: 'Jakiś tytuł',
+            color: 'white',
+            padding: {
+              top: 10,
+              bottom: 30,
+            },
+          },
+          legend: {
+            position: 'bottom',
+            align: 'center',
+            labels: {
+              color: 'white',
+              boxWidth: 40,
+              padding: 10,
+              font: {
+                size: 18,
+              }
+            }
+          }
+        }
       }
     })
   }
