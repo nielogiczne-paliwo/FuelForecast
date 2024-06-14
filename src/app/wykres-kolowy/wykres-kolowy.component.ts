@@ -38,7 +38,7 @@ export class WykresKolowyComponent {
               size: 40,
             },
             display: true,
-            text: 'Jakiś tytuł',
+            text: 'Suma dostarczonych paliw',
             color: 'white',
             padding: {
               top: 10,

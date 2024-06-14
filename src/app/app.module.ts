@@ -8,7 +8,7 @@ import { ButtonComponent } from './button/button.component';
 import { LogoComponent } from './logo/logo.component';
 import { SecondViewComponent } from './second-view/second-view.component';
 import { FuelConditionComponent } from './fuel-condition/fuel-condition.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 import { ErrorMessageComponent } from './error-message/error-message.component';
 import { AppRoutingModule } from './app-routing.component';
@@ -20,6 +20,7 @@ import { MoreDeliverComponent } from './more-deliver/more-deliver.component';
 import { DeliveryTableComponent } from './delivery-table/delivery-table.component';
 import { SumByDayOFTheWeekComponent } from './sum-by-day-ofthe-week/sum-by-day-ofthe-week.component';
 import { SumFuelByDayComponent } from './sum-fuel-by-day/sum-fuel-by-day.component';
+import { WykresSlupkowyComponent } from './wykres-slupkowy/wykres-slupkowy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,8 +39,9 @@ import { SumFuelByDayComponent } from './sum-fuel-by-day/sum-fuel-by-day.compone
     DeliveryTableComponent,
     SumByDayOFTheWeekComponent,
     SumFuelByDayComponent,
+    WykresSlupkowyComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
