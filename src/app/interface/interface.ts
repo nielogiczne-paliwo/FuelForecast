@@ -12,8 +12,8 @@ export interface fuel {
   inputData: number;
 }
 export interface stationData {
-  dateStart: Date;
-  dateEnd: Date;
+  dateStart: string;
+  dateEnd: string;
   ULG95: fuel;
   DK: fuel;
   ULTSU: fuel;

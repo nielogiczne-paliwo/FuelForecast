@@ -13,8 +13,8 @@ export class DataFormService {
     this.saveForm = false;
     this.anotherDate = new Date(2000, 0, 0);
     this.dataForm = {
-      dateStart: this.anotherDate,
-      dateEnd: this.anotherDate,
+      dateStart: this.anotherDate.toDateString(),
+      dateEnd: this.anotherDate.toDateString(),
       ULG95: {
         maxStock: 0,
         capacity: 0,
@@ -50,8 +50,8 @@ export class DataFormService {
   setRestartForm(): void {
     this.saveForm = false;
     this.dataForm = {
-      dateStart: this.anotherDate,
-      dateEnd: this.anotherDate,
+      dateStart: this.anotherDate.toDateString(),
+      dateEnd: this.anotherDate.toDateString(),
       ULG95: {
         maxStock: 0,
         capacity: 0,

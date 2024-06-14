@@ -32,6 +32,7 @@ export class DashboardViewService {
   private setTableData() {
     let TableData: delivierData[];
     TableData = this.data;
+
     TableData.forEach((e, i) => {
       TableData.forEach((e1, j) => {
         if (e1.date == e.date && i != j) e1.moreDeliver = true;
