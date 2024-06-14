@@ -23,7 +23,6 @@ export class SumFuelByDayComponent {
   sumDayData: { label: string; data: number[] }[] = [];
   constructor(DashboardService: DashboardViewService) {
     this.data = DashboardService.sumByDatOfTheWeek();
-    console.log(this.data);
     this.setDataSet();
   }
 
