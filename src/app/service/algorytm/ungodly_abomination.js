@@ -2602,7 +2602,7 @@ async function get_deliveries(
                                 0.4, 0.8
                             ).then(
                                 function(results) { 
-                                    resolve({'deliveries':[results]})
+                                    resolve(results)
                                     
                                 }
                             );
