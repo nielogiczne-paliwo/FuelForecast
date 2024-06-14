@@ -83,7 +83,7 @@ export class FuelConditionComponent {
     const dataForm = this.myForm.value;
     this.fuelConditionForm = {
       dateStart: dataForm.dateStart,
-      dateEnd: dataForm.dateStart,
+      dateEnd: dataForm.dateStop,
       ULG95: {
         maxStock: dataForm.ULG95maxStock,
         capacity: dataForm.ULG95capacity,

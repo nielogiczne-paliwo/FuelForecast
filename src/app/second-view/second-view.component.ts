@@ -5,6 +5,8 @@ import { FileDataService } from '../service/file-data.service';
 import { DashboardViewComponent } from '../dashboard-view/dashboard-view.component';
 import { DashboardViewService } from '../service/dashboard-view.service';
 import { SessionService } from '../service/session.service';
+import { AlgorithmService } from '../service/algorithm.service';
+import { callback } from 'chart.js/dist/helpers/helpers.core';
 
 @Component({
   selector: 'app-second-view',
@@ -21,7 +23,8 @@ export class SecondViewComponent {
     private dataForm: DataFormService,
     private router: Router,
     private fileData: FileDataService,
-    private SesionService: SessionService
+    private SesionService: SessionService,
+    private Algorithm: AlgorithmService
   ) {
     this.activeForm = false;
     this.activeError = false;
@@ -31,7 +34,6 @@ export class SecondViewComponent {
 
   activform(value: boolean): void {
     this.activeForm = value;
-    console.log(this.activeForm);
   }
   activeErrorMessage(value: boolean): void {
     this.activeError = value;
@@ -39,8 +41,7 @@ export class SecondViewComponent {
 
   nextView() {
     if (this.dataForm.getSaveForm()) {
-      console.log('FORMULARZZZZZZZZZZ');
-      this.router.navigate(['dashboard']);
+      this.Algorithm.setDeliverData(this.dataForm.getDataForm());
     } else if (this.fileData.getLoadFile()) {
       this.SesionService.setData(this.fileData.getData());
       this.router.navigate(['dashboard']);

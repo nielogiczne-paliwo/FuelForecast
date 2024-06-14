@@ -26,7 +26,6 @@ export class SumByDayOFTheWeekComponent {
   }
   ngOnInit(): void {
     this.sumDay();
-    console.log(this.sumDayData);
 
     this.chart = new Chart('canvas1', {
       type: 'bar',
@@ -74,7 +73,6 @@ export class SumByDayOFTheWeekComponent {
         },
       },
     });
-    console.log(this.chart);
   }
   sumDay() {
     this.data.forEach((e) => {
