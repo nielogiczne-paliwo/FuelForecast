@@ -2566,7 +2566,6 @@ const averaged_data_arr = [
     ]
   ]
 function parseDateStringToDayOfYear(dateString) {
-
     let startOfYear = new Date(dateString.getFullYear(), 0, 1);
 
     let diffInMilliseconds = dateString - startOfYear;
@@ -2577,6 +2576,7 @@ function parseDateStringToDayOfYear(dateString) {
 }
 
 function parseDate(dateStr) {
+  
         var [day, month, year] = dateStr.split('.').map(Number);
         return new Date(year, month - 1, day);
     }
@@ -2622,7 +2622,9 @@ async function get_deliveries(
     k, k2
 ) {
     date_start=parseDate(date_start)
-    date_end=parseDate(date_end)
+    console.log(date_start + "-");
+    date_end=parseDate(date_end);
+    console.log(date_end + "-");
 
     let deliveryResults = [];
     let averageData = data;

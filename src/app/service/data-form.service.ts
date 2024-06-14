@@ -38,6 +38,8 @@ export class DataFormService {
     };
   }
   getDataForm(): stationData {
+    console.log(this.dataForm);
+
     return this.dataForm;
   }
   setDataForm(prop: stationData): void {
