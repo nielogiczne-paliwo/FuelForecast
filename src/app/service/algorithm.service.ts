@@ -30,6 +30,15 @@ export class AlgorithmService {
   getDeliverData() {
     this.SesionService.setData(this.deliverData);
     this.router.navigate(['dashboard']);
-    console.log(this.SesionService.getDataSession());
   }
 }
+// formData.dateStart,
+// formData.dateEnd,
+// formData.ULG95.inputData,
+// formData.ULG95.capacity,
+// formData.DK.inputData,
+// formData.DK.capacity,
+// formData.ULTSU.inputData,
+// formData.ULTSU.capacity,
+// formData.ULTDK.inputData,
+// formData.ULTDK.capacity
