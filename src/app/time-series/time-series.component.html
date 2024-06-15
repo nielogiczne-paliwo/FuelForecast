@@ -1,0 +1,15 @@
+<section>
+    <article class="chartArticle">
+        <div class="chartBox">
+            <canvas id="timeSeriesOfDel"></canvas>
+        </div>
+        <form>
+            <h3>Podaj zakres</h3>
+            <label for="minDate">Od</label>
+            <input type="date" name="minDate" min={{minDate}} max={{inputMaxDate}} (change)="setMinDate($event)" >
+            <label for="maxDate">Do</label>
+            <input type="date" name="maxDate" min={{inputMinDate}} max={{maxDate}} (change)="setMaxDate($event)" >
+            <button type="button" (click)="updateChart()" >Wyświetl</button>
+        </form>
+    </article>
+</section>

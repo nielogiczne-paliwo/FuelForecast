@@ -20,6 +20,7 @@ import { MoreDeliverComponent } from './more-deliver/more-deliver.component';
 import { DeliveryTableComponent } from './delivery-table/delivery-table.component';
 import { SumByDayOFTheWeekComponent } from './sum-by-day-ofthe-week/sum-by-day-ofthe-week.component';
 import { SumFuelByDayComponent } from './sum-fuel-by-day/sum-fuel-by-day.component';
+import { TimeSeriesComponent } from './time-series/time-series.component';
 import { WykresSlupkowyComponent } from './wykres-slupkowy/wykres-slupkowy.component';
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { WykresSlupkowyComponent } from './wykres-slupkowy/wykres-slupkowy.compo
     DeliveryTableComponent,
     SumByDayOFTheWeekComponent,
     SumFuelByDayComponent,
+    TimeSeriesComponent,
     WykresSlupkowyComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule],
