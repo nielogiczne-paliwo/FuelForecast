@@ -50,7 +50,7 @@ export class SumByDayOFTheWeekComponent {
               size: 40,
             },
             display: true,
-            text: 'Jakiś tytuł',
+            text: 'Suma dostarczonego paliwa z podziałem na dzień tygodnia',
             color: 'white',
             padding: {
               top: 10,
