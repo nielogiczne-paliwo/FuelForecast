@@ -53,7 +53,7 @@ export class SumFuelByDayComponent {
               size: 40,
             },
             display: true,
-            text: 'Jakiś tytuł',
+            text: 'Suma dostarczonego ze względu na dzień tygodnia i rodzaj paliwa',
             color: 'white',
             padding: {
               top: 10,

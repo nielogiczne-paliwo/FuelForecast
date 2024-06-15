@@ -8,7 +8,7 @@ import { delivierData } from '../interface/interface';
 @Component({
   selector: 'app-wykres-slupkowy',
   templateUrl: './wykres-slupkowy.component.html',
-  styleUrls: ['./wykres-slupkowy.component.css']
+  styleUrls: ['./wykres-slupkowy.component.css'],
 })
 export class WykresSlupkowyComponent {
   dostawy = dane_dostaw;
@@ -17,7 +17,7 @@ export class WykresSlupkowyComponent {
   private dane: number[] = [0, 0, 0, 0];
   private selectedDate: string = '06.11.2016';
   deliveryData: delivierData[] = [];
-  constructor(sesion: SessionService){
+  constructor(sesion: SessionService) {
     this.deliveryData = sesion.getDataSession();
   }
 
@@ -42,7 +42,7 @@ export class WykresSlupkowyComponent {
               'rgba(75, 192, 192, 0.2)',
               'rgba(54, 162, 235, 0.2)',
               'rgba(153, 102, 255, 0.2)',
-              'rgba(201, 203, 207, 0.2)'
+              'rgba(201, 203, 207, 0.2)',
             ],
             borderColor: [
               'rgb(255, 99, 132)',
@@ -51,7 +51,7 @@ export class WykresSlupkowyComponent {
               'rgb(75, 192, 192)',
               'rgb(54, 162, 235)',
               'rgb(153, 102, 255)',
-              'rgb(201, 203, 207)'
+              'rgb(201, 203, 207)',
             ],
             borderWidth: 1,
           },
@@ -77,36 +77,31 @@ export class WykresSlupkowyComponent {
             },
           },
           legend: {
-            display: false
+            display: false,
           },
         },
       },
     });
-    this.chart.options.animation = false;
   }
 
   private setDeliverData(): void {
     const selectedDateString = this.selectedDate;
-    const delivery = this.deliveryData.find(d => {
-      const dateString = d.date instanceof Date ? this.formatDate(d.date) : d.date;
-    return dateString === selectedDateString;
+    const delivery = this.deliveryData.find((d) => {
+      const dateString =
+        d.date instanceof Date ? this.formatDate(d.date) : d.date;
+      return dateString === selectedDateString;
     });
     console.log(delivery);
-    
+
     if (delivery) {
-      this.dane = [
-        delivery.ULG95,
-        delivery.DK,
-        delivery.ULTSU,
-        delivery.ULTDK,
-      ];
+      this.dane = [delivery.ULG95, delivery.DK, delivery.ULTSU, delivery.ULTDK];
     } else {
       console.warn(`No data found for date: ${this.selectedDate}`);
     }
   }
   private formatDate(date: Date): string {
-    const month = ("0" + (date.getMonth() + 1)).slice(-2);
-    const day = ("0" + date.getDate()).slice(-2);
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + date.getDate()).slice(-2);
     const year = date.getFullYear().toString().slice(-2);
     return `${month}/${day}/${year}`;
   }

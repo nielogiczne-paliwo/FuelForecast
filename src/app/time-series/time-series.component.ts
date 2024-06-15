@@ -7,20 +7,20 @@ import { min } from 'rxjs';
 @Component({
   selector: 'app-time-series',
   templateUrl: './time-series.component.html',
-  styleUrls: ['./time-series.component.css']
+  styleUrls: ['./time-series.component.css'],
 })
 export class TimeSeriesComponent {
   private chart: any;
   loadedData: delivierData[] = [];
-  delivieriesEachDay: {label: string; data: {x: Date, y: number}[]}[] = [];
+  delivieriesEachDay: { label: string; data: { x: Date; y: number }[] }[] = [];
   allDatesDDMM: string[] = [];
   allDatesMMDD: number[] = [];
   minDate: string = '2000-01-01';
   maxDate: string = '2500-12-31';
   inputMinDate: string = '2000-01-01';
   inputMaxDate: string = '2500-12-31';
-  
-  constructor(DashboardService: DashboardViewService){
+
+  constructor(DashboardService: DashboardViewService) {
     this.loadedData = DashboardService.getTableData();
     this.setDataSet();
     this.setRangeOfDays();
@@ -48,12 +48,16 @@ export class TimeSeriesComponent {
     const day: string = date.substring(0, 3);
     const year: string = date.substring(6);
 
-    return new Date(month+day+year);
+    return new Date(month + day + year);
   }
 
   changeDateFormatToYYYYMM(date: Date): string {
-    const day: string = (date.getDate() < 10) ? `0${date.getDate()}` : date.getDate().toString();
-    const month: string = (date.getMonth()+1 < 10) ? `0${date.getMonth()+1}` : (date.getMonth()+1).toString();
+    const day: string =
+      date.getDate() < 10 ? `0${date.getDate()}` : date.getDate().toString();
+    const month: string =
+      date.getMonth() + 1 < 10
+        ? `0${date.getMonth() + 1}`
+        : (date.getMonth() + 1).toString();
     const year: string = date.getFullYear().toString();
 
     return `${year}-${month}-${day}`;
@@ -76,30 +80,35 @@ export class TimeSeriesComponent {
 
   setDataSet(toDo: boolean = true): void {
     this.delivieriesEachDay = [];
-    let DK: {x: Date, y: number}[] = [];
-    let ULG95: {x: Date, y: number}[] = [];
-    let ULTDK: {x: Date, y: number}[] = [];
-    let ULTSU: {x: Date, y: number}[] = [];
-    let minDate: number = this.changeYYYYMMToDateType(this.inputMinDate).valueOf();
-    let maxDate: number = this.changeYYYYMMToDateType(this.inputMaxDate).valueOf();
-    this.loadedData.forEach((i) =>{
-      let dateValueData: number = this.changeDateFormatToMMDD(i.date.toString()).valueOf();
+    let DK: { x: Date; y: number }[] = [];
+    let ULG95: { x: Date; y: number }[] = [];
+    let ULTDK: { x: Date; y: number }[] = [];
+    let ULTSU: { x: Date; y: number }[] = [];
+    let minDate: number = this.changeYYYYMMToDateType(
+      this.inputMinDate
+    ).valueOf();
+    let maxDate: number = this.changeYYYYMMToDateType(
+      this.inputMaxDate
+    ).valueOf();
+    this.loadedData.forEach((i) => {
+      let dateValueData: number = this.changeDateFormatToMMDD(
+        i.date.toString()
+      ).valueOf();
       if (dateValueData >= minDate && dateValueData <= maxDate) {
-        DK.push({x: i.date, y: i.DK});
-        ULG95.push({x: i.date, y: i.ULG95});
-        ULTDK.push({x: i.date, y: i.ULTDK});
-        ULTSU.push({x: i.date, y: i.ULTSU});
+        DK.push({ x: i.date, y: i.DK });
+        ULG95.push({ x: i.date, y: i.ULG95 });
+        ULTDK.push({ x: i.date, y: i.ULTDK });
+        ULTSU.push({ x: i.date, y: i.ULTSU });
       }
-      if (toDo)
-        this.allDatesDDMM.push(i.date.toString())
+      if (toDo) this.allDatesDDMM.push(i.date.toString());
     });
 
-    if (toDo){
-      this.allDatesDDMM.forEach((i)=>{
+    if (toDo) {
+      this.allDatesDDMM.forEach((i) => {
         this.allDatesMMDD.push(this.changeDateFormatToMMDD(i).valueOf());
       });
     }
-    
+
     this.delivieriesEachDay = [
       {
         label: 'DK',
@@ -131,8 +140,7 @@ export class TimeSeriesComponent {
           y: {
             beginAtZero: true,
           },
-          x: {
-          }
+          x: {},
         },
         plugins: {
           title: {
@@ -140,7 +148,7 @@ export class TimeSeriesComponent {
               size: 40,
             },
             display: true,
-            text: 'Jakiś tytuł',
+            text: 'Dostawy na osi czasu',
             color: 'white',
             padding: {
               top: 10,
@@ -156,11 +164,11 @@ export class TimeSeriesComponent {
               padding: 10,
               font: {
                 size: 18,
-              }
-            }
-          }
-        }
-      }
-    })
+              },
+            },
+          },
+        },
+      },
+    });
   }
 }
