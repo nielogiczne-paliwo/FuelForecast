@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { delivierData } from '../interface/interface';
 import { DashboardViewService } from '../service/dashboard-view.service';
 import { Chart } from 'chart.js';
-import { min } from 'rxjs';
+import 'chartjs-adapter-moment';
 
 @Component({
   selector: 'app-time-series',
@@ -95,10 +95,10 @@ export class TimeSeriesComponent {
         i.date.toString()
       ).valueOf();
       if (dateValueData >= minDate && dateValueData <= maxDate) {
-        DK.push({ x: i.date, y: i.DK });
-        ULG95.push({ x: i.date, y: i.ULG95 });
-        ULTDK.push({ x: i.date, y: i.ULTDK });
-        ULTSU.push({ x: i.date, y: i.ULTSU });
+        DK.push({ x: this.changeDateFormatToMMDD(i.date.toString()), y: i.DK });
+        ULG95.push({ x: this.changeDateFormatToMMDD(i.date.toString()), y: i.ULG95 });
+        ULTDK.push({ x: this.changeDateFormatToMMDD(i.date.toString()), y: i.ULTDK });
+        ULTSU.push({ x: this.changeDateFormatToMMDD(i.date.toString()), y: i.ULTSU });
       }
       if (toDo) this.allDatesDDMM.push(i.date.toString());
     });
@@ -140,9 +140,34 @@ export class TimeSeriesComponent {
           y: {
             beginAtZero: true,
           },
-          x: {},
+          x: {
+            type: 'time',
+            time: {
+              unit: 'day',
+              displayFormats: {
+                'day': 'DD.MM.yyyy',
+              },
+            },
+            ticks: {
+              maxTicksLimit: 12,
+            },
+          },
         },
         plugins: {
+          tooltip: {
+            callbacks: {
+              title: (context) => {
+                let date: Date = new Date(context[0].label);
+                let day: string = 
+                  (date.getDate() < 10) ? `0${date.getDate()}` : date.getDate().toString();
+                let month: string = 
+                  (date.getMonth()+1 < 10) ? `0${date.getMonth()+1}` : (date.getMonth()+1).toString();
+                let year: string = date.getFullYear().toString();
+                
+                return `${day}.${month}.${year}`;
+              }
+            },
+          },
           title: {
             font: {
               size: 40,
