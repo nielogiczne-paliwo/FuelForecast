@@ -2685,6 +2685,7 @@ async function get_deliveries(
             if (delivery_table.reduce((a, b) => a + b, 0) <= 40000) {
                 if (!delivery_table.every(item => item == 0)) {
                     // debugger
+                    delivery_table = delivery_table.map(Math.floor)
                     deliveryResults.push(assembleDeliveryObject(date_start, x-day_start, delivery_table));
                 }
             } else {
