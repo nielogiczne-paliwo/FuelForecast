@@ -1,12 +1,19 @@
 <main>
   <app-header-navbar />
   <section>
-    <div><app-time-series /></div>
-    <div><app-wykres-slupkowy /></div>
-    <div><app-wykres-kolowy /></div>
-    <div><app-sum-by-day-ofthe-week /></div>
-    <div><app-sum-fuel-by-day /></div>
-    <div><app-more-deliver /></div>
-    <div><app-delivery-table /></div>
+    <h1>Prognozy</h1>
+    <div class="list">
+      <h2 (click)="showList()" >{{choosenOption.name}}</h2>
+      <ul [ngClass]="isActiveList">
+        <li *ngFor="let item of options" (click)="chooseChart(item)" >{{item.name}}</li>
+      </ul>
+    </div>
+    <div [ngClass]="options[0].state"><app-time-series /></div>
+    <div [ngClass]="options[1].state"><app-wykres-slupkowy /></div>
+    <div [ngClass]="options[2].state"><app-wykres-kolowy /></div>
+    <div [ngClass]="options[3].state"><app-sum-by-day-ofthe-week /></div>
+    <div [ngClass]="options[4].state"><app-sum-fuel-by-day /></div>
+    <div [ngClass]="options[5].state"><app-more-deliver /></div>
+    <div [ngClass]="options[6].state"><app-delivery-table /></div>
   </section>
 </main>

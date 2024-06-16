@@ -15,9 +15,26 @@ section {
   padding: 5% 0;
   margin-left: 7.5%;
   flex-wrap: wrap;
+  color: white;
 }
 div {
   border: 5px solid white;
   margin-bottom: 30px;
   width: 100%;
+}
+
+.list {
+ 
+}
+
+.list ul {
+  list-style-type: none;
+}
+
+.active {
+  display: block;
+}
+
+.no-active {
+  display: none;
 }
