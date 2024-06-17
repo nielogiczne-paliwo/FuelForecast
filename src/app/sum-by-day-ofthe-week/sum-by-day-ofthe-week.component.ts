@@ -39,6 +39,9 @@ export class SumByDayOFTheWeekComponent {
         ],
       },
       options: {
+        layout: {
+          padding: 10,
+        },
         scales: {
           y: {
             beginAtZero: true,

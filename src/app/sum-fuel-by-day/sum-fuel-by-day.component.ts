@@ -42,6 +42,9 @@ export class SumFuelByDayComponent {
         datasets: this.sumDayData,
       },
       options: {
+        layout: {
+          padding: 10,
+        },
         scales: {
           y: {
             beginAtZero: true,
