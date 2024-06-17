@@ -16,11 +16,11 @@
         <div class="fuelCondition" *ngFor="let items of petrol">
           <h2>{{ items }}:</h2>
           <div class="inputDiv" *ngFor="let item of dataStructure">
-            <label for="{{ items + item }}">{{ item }}:</label>
+            <label for="{{ items + item.en }}">{{ item.pl }}:</label>
             <input
               type="number"
-              id="{{ items + item }}"
-              formControlName="{{ items + item }}"
+              id="{{ items + item.en }}"
+              formControlName="{{ items + item.en }}"
             />
           </div>
         </div>

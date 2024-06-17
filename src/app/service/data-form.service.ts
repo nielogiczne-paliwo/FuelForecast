@@ -16,30 +16,24 @@ export class DataFormService {
       dateStart: this.anotherDate.toDateString(),
       dateEnd: this.anotherDate.toDateString(),
       ULG95: {
-        maxStock: 0,
         capacity: 0,
         inputData: 0,
       },
       DK: {
-        maxStock: 0,
         capacity: 0,
         inputData: 0,
       },
       ULTSU: {
-        maxStock: 0,
         capacity: 0,
         inputData: 0,
       },
       ULTDK: {
-        maxStock: 0,
         capacity: 0,
         inputData: 0,
       },
     };
   }
   getDataForm(): stationData {
-    console.log(this.dataForm);
-
     return this.dataForm;
   }
   setDataForm(prop: stationData): void {
@@ -55,22 +49,18 @@ export class DataFormService {
       dateStart: this.anotherDate.toDateString(),
       dateEnd: this.anotherDate.toDateString(),
       ULG95: {
-        maxStock: 0,
         capacity: 0,
         inputData: 0,
       },
       DK: {
-        maxStock: 0,
         capacity: 0,
         inputData: 0,
       },
       ULTSU: {
-        maxStock: 0,
         capacity: 0,
         inputData: 0,
       },
       ULTDK: {
-        maxStock: 0,
         capacity: 0,
         inputData: 0,
       },
