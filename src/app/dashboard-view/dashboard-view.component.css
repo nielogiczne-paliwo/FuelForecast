@@ -95,3 +95,7 @@ h1 {
   margin-right: auto;
   justify-content: space-between;
 }
+
+.options:hover {
+  background: linear-gradient(180deg, rgba(208,216,245,0.57) 0%, rgba(27,49,41,0.57) 44%, rgba(44,36,106,0.57) 100%);
+}
