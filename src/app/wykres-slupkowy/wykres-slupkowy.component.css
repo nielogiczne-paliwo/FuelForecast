@@ -1,12 +1,30 @@
 #inp {
     padding: 8px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 4px;
     width: 200px;
     outline: none;
     cursor: pointer;
-    }
+    /* border-radius: 8px;
+    padding: 4px 15px; */
+    background-color: #bb69c9;
+    border: 0px solid;
+    transition: 0.2s ease-in-out;
+    font-size: 1rem;
+    color: #fff;
+    margin: 10px 0 10px 10px;
+}
+
+#inp:hover {
+    background-color: #8c7e8e;
+    transition: 0.2s ease-in-out;
+}
+
+#inp:focus {
+    background-color: #8c7e8e;
+    transition: 0.2s ease-in-out;
+}
 #wyb{
     font-size: 150%;
     color: white;

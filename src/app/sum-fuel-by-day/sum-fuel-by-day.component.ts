@@ -23,7 +23,6 @@ export class SumFuelByDayComponent {
   sumDayData: { label: string; data: number[] }[] = [];
   constructor(DashboardService: DashboardViewService) {
     this.data = DashboardService.sumByDatOfTheWeek();
-    console.log(this.data);
     this.setDataSet();
   }
 
@@ -43,6 +42,9 @@ export class SumFuelByDayComponent {
         datasets: this.sumDayData,
       },
       options: {
+        layout: {
+          padding: 10,
+        },
         scales: {
           y: {
             beginAtZero: true,
@@ -54,7 +56,7 @@ export class SumFuelByDayComponent {
               size: 40,
             },
             display: true,
-            text: 'Jakiś tytuł',
+            text: 'Suma dostarczonego ze względu na dzień tygodnia i rodzaj paliwa',
             color: 'white',
             padding: {
               top: 10,

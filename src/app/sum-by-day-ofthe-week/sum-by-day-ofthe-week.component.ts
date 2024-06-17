@@ -26,7 +26,6 @@ export class SumByDayOFTheWeekComponent {
   }
   ngOnInit(): void {
     this.sumDay();
-    console.log(this.sumDayData);
 
     this.chart = new Chart('canvas1', {
       type: 'bar',
@@ -41,6 +40,9 @@ export class SumByDayOFTheWeekComponent {
         ],
       },
       options: {
+        layout: {
+          padding: 10,
+        },
         scales: {
           y: {
             beginAtZero: true,
@@ -52,7 +54,7 @@ export class SumByDayOFTheWeekComponent {
               size: 40,
             },
             display: true,
-            text: 'Jakiś tytuł',
+            text: 'Suma dostarczonego paliwa z podziałem na dzień tygodnia',
             color: 'white',
             padding: {
               top: 10,
@@ -75,7 +77,6 @@ export class SumByDayOFTheWeekComponent {
         },
       },
     });
-    console.log(this.chart);
   }
   sumDay() {
     this.data.forEach((e) => {

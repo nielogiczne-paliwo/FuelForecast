@@ -32,6 +32,7 @@ export class WykresKolowyComponent {
         ],
       },
       options: {
+        aspectRatio: 1.5,
         plugins: {
           title: {
             font: {
