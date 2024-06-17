@@ -79,6 +79,24 @@ export class TimeSeriesComponent {
   }
 
   setDataSet(toDo: boolean = true): void {
+    let copyLoadedData: delivierData[] = JSON.parse(JSON.stringify(this.loadedData));
+    let preaparedData: delivierData[] = [];
+    let lastElement: delivierData = {date: new Date('01.01.1900'), ULG95: -1, DK: -1, ULTSU: -1, ULTDK: -1};
+    copyLoadedData.forEach((i) => {
+      if (i.date !== lastElement.date) {
+        if (lastElement.ULG95 !== -1)
+          preaparedData.push(lastElement);
+        lastElement = i;
+      } else {
+        lastElement.DK = lastElement.DK + i.DK;
+        lastElement.ULG95 = lastElement.ULG95 + i.ULG95;
+        lastElement.ULTDK = lastElement.ULTDK + i.ULTDK;
+        lastElement.ULTSU = lastElement.ULTSU + i.ULTSU;
+      }
+    });
+    if (preaparedData.at(-1)?.date !== lastElement.date)
+      preaparedData.push(lastElement);
+
     this.delivieriesEachDay = [];
     let DK: { x: Date; y: number }[] = [];
     let ULG95: { x: Date; y: number }[] = [];
@@ -90,7 +108,7 @@ export class TimeSeriesComponent {
     let maxDate: number = this.changeYYYYMMToDateType(
       this.inputMaxDate
     ).valueOf();
-    this.loadedData.forEach((i) => {
+    preaparedData.forEach((i) => {
       let dateValueData: number = this.changeDateFormatToMMDD(
         i.date.toString()
       ).valueOf();
