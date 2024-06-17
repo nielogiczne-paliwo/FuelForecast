@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { DashboardViewService } from '../service/dashboard-view.service';
 import { delivierData } from '../interface/interface';
 
@@ -9,6 +9,7 @@ import { delivierData } from '../interface/interface';
 })
 export class DashboardViewComponent {
   isActiveList: string = 'no-active';
+  arrow: string = 'arrow_drop_down';
   options: {name: string, state: string}[] = [{name: 'Dostawy na osi czasu', state: 'no-active'}, {name: 'Dostawy paliw dla danego dnia', state: 'no-active'}, 
     {name: 'Suma dostarczonych paliw', state: 'no-active'}, {name: 'Suma dostarczonego paliwa z podziałem na dzień tygodnia', state: 'no-active'},
     {name: 'Suma dostarczonego paliwa ze względu na dzień tygodnia i rodzaj paliwa', state: 'no-active'}, {name: 'Dni w których jest niezbędnych więcej niż jeden kierowca', state: 'no-active'},
@@ -20,10 +21,14 @@ export class DashboardViewComponent {
   }
 
   showList(): void {
-    if (this.isActiveList === 'no-active')
+    if (this.isActiveList === 'no-active') {
+      this.arrow = 'arrow_drop_up';
       this.isActiveList = 'active';
-    else
+    }
+    else {
+      this.arrow = 'arrow_drop_down';
       this.isActiveList = 'no-active';
+    }
   }
 
   chooseChart(chart: {name: string, state: string}): void {

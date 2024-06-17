@@ -3,7 +3,12 @@
   <section>
     <h1>Prognozy</h1>
     <div class="list">
-      <p (click)="showList()" >{{choosenOption.name}}</p>
+      <div class="options" (click)="showList()" >
+        <p>{{choosenOption.name}}</p>
+        <span class="material-symbols-outlined">
+          {{arrow}}
+        </span>
+      </div>
       <ul [ngClass]="isActiveList">
         <li *ngFor="let item of options" (click)="chooseChart(item)" >{{item.name}}</li>
       </ul>

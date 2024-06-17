@@ -48,30 +48,24 @@ h1 {
  border: none;
  user-select: none;
  margin-bottom: 25px;
-}
-
-.list p {
-  border-radius: 15px;
-  background: linear-gradient(180deg, rgba(208,186,245,0.57) 0%, rgba(27,19,41,0.57) 44%, rgba(44,6,106,0.57) 100%);
-  font-size: larger;
-  padding: 10px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-
+ user-select: none;
+ cursor: pointer;
 }
 
 .list ul {
   list-style-type: none;
   margin-left: auto;
   margin-right: auto;
-  width: 79%;
+  width: 54%;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .list li {
   border-bottom: solid 1px white;
   padding: 10px;
-  background-color: rgba(208,186,245,0.1);
+  background-color: rgb(34, 10, 72);
 }
 
 .list li:last-child {
@@ -88,4 +82,16 @@ h1 {
 
 .no-active {
   display: none;
+}
+
+.options {
+  display: flex;
+  border-radius: 15px;
+  background: linear-gradient(180deg, rgba(208,186,245,0.57) 0%, rgba(27,19,41,0.57) 44%, rgba(44,6,106,0.57) 100%);
+  font-size: larger;
+  padding: 10px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
 }
