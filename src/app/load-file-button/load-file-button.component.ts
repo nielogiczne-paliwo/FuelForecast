@@ -36,7 +36,6 @@ export class LoadFileButtonComponent {
           throw 'Zła zawartość pliku';
         const loadedData: delivierData[] = loadedFile.deliveries;
         this.fileData.setData(loadedData);
-        console.log(this.fileData.getData());
       } catch (err) {
         if (typeof err === 'string') {
           this.isError = true;

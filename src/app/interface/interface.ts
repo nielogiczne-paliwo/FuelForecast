@@ -7,7 +7,6 @@ export interface delivierData {
   moreDeliver?: boolean;
 }
 export interface fuel {
-  maxStock: number;
   capacity: number;
   inputData: number;
 }

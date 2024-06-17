@@ -19,12 +19,17 @@ export class FuelConditionComponent {
   fuelConditionForm: stationData;
   anotherDate: Date = new Date(2023, 11, 25);
   petrol: string[];
-  dataStructure: string[];
+  dataStructure: {
+    pl: string;
+    en: string;
+  }[] = [
+    { pl: 'Pojemność', en: 'capacity' },
+    { pl: 'Stan', en: 'inputData' },
+  ];
   myForm: FormGroup = this.builder.group({});
 
   constructor(private builder: FormBuilder, private dataForm: DataFormService) {
     this.petrol = ['ULG95', 'DK', 'ULTSU', 'ULTDK'];
-    this.dataStructure = ['maxStock', 'capacity', 'inputData'];
     this.fuelConditionForm = dataForm.getDataForm();
   }
   ngOnInit() {
@@ -34,10 +39,7 @@ export class FuelConditionComponent {
     this.myForm = this.builder.group({
       dateStart: [this.fuelConditionForm.dateStart, Validators.required],
       dateStop: [this.fuelConditionForm.dateEnd, Validators.required],
-      ULG95maxStock: [
-        this.fuelConditionForm.ULG95.maxStock,
-        Validators.required,
-      ],
+
       ULG95capacity: [
         this.fuelConditionForm.ULG95.capacity,
         Validators.required,
@@ -46,23 +48,15 @@ export class FuelConditionComponent {
         this.fuelConditionForm.ULG95.inputData,
         Validators.required,
       ],
-      DKmaxStock: [this.fuelConditionForm.DK.maxStock, Validators.required],
       DKcapacity: [this.fuelConditionForm.DK.capacity, Validators.required],
       DKinputData: [this.fuelConditionForm.DK.inputData, Validators.required],
-      ULTSUmaxStock: [
-        this.fuelConditionForm.ULTSU.maxStock,
-        Validators.required,
-      ],
+
       ULTSUcapacity: [
         this.fuelConditionForm.ULTSU.capacity,
         Validators.required,
       ],
       ULTSUinputData: [
         this.fuelConditionForm.ULTSU.inputData,
-        Validators.required,
-      ],
-      ULTDKmaxStock: [
-        this.fuelConditionForm.ULTDK.maxStock,
         Validators.required,
       ],
       ULTDKcapacity: [
@@ -85,22 +79,18 @@ export class FuelConditionComponent {
       dateStart: dataForm.dateStart,
       dateEnd: dataForm.dateStop,
       ULG95: {
-        maxStock: dataForm.ULG95maxStock,
         capacity: dataForm.ULG95capacity,
         inputData: dataForm.ULG95inputData,
       },
       DK: {
-        maxStock: dataForm.DKmaxStock,
         capacity: dataForm.DKcapacity,
         inputData: dataForm.DKinputData,
       },
       ULTSU: {
-        maxStock: dataForm.ULTSUmaxStock,
         capacity: dataForm.ULTSUcapacity,
         inputData: dataForm.ULTSUinputData,
       },
       ULTDK: {
-        maxStock: dataForm.ULTDKmaxStock,
         capacity: dataForm.ULTDKcapacity,
         inputData: dataForm.ULTDKinputData,
       },
