@@ -19,6 +19,7 @@ export class WykresSlupkowyComponent {
   deliveryData: delivierData[] = [];
   constructor(sesion: SessionService) {
     this.deliveryData = sesion.getDataSession();
+    this.setDataSet();
   }
 
   ngOnInit(): void {
@@ -84,6 +85,27 @@ export class WykresSlupkowyComponent {
     });
   }
 
+  setDataSet(): void {
+    let copyLoadedData: delivierData[] = JSON.parse(JSON.stringify(this.deliveryData));
+    let preaparedData: delivierData[] = [];
+    let lastElement: delivierData = {date: new Date('01.01.1900'), ULG95: -1, DK: -1, ULTSU: -1, ULTDK: -1};
+    console.log(copyLoadedData);
+    
+    copyLoadedData.forEach((i) => {
+      if (i.date !== lastElement.date) {
+        if (lastElement.ULG95 !== -1)
+          preaparedData.push(lastElement);
+        lastElement = i;
+      } else {
+        lastElement.DK = lastElement.DK + i.DK;
+        lastElement.ULG95 = lastElement.ULG95 + i.ULG95;
+        lastElement.ULTDK = lastElement.ULTDK + i.ULTDK;
+        lastElement.ULTSU = lastElement.ULTSU + i.ULTSU;
+      }
+    });
+    preaparedData.push(lastElement);
+    this.deliveryData = preaparedData;
+  }
   private setDeliverData(): void {
     const selectedDateString = this.selectedDate;
     const delivery = this.deliveryData.find((d) => {
