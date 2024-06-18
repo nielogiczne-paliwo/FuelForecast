@@ -16,7 +16,7 @@ section {
   transition: opacity 1s ease;
 }
 article {
-  margin-top: 95px;
+  margin-top: 2.5%;
   height: 75svh;
   width: 64%;
   background-color: #d9d9d9;
@@ -90,6 +90,7 @@ input {
 }
 app-close-button {
   position: relative;
-  top: -56svh;
+  top: 6%;
   right: -94%;
+  background-color: purple;
 }
