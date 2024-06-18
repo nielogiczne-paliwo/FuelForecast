@@ -1,6 +1,7 @@
 <section [ngClass]="{ active: isActive }">
   <article>
-    <h1>Formularz</h1>
+    <app-close-button [text]="'X'" (click)="closeForm()" />
+    <h1>Formularz stanów zbiorników</h1>
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
       <div class="dataForm">
         <div class="inputDiv">
@@ -29,7 +30,7 @@
         <app-button [buttonText]="'Zapisz'" [isActive]="true" type="onSubmit" />
       </div>
     </form>
-    <app-close-button [text]="'X'" (click)="closeForm()" />
+
   </article>
 </section>
 

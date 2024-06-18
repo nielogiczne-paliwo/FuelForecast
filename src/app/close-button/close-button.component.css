@@ -1,7 +1,10 @@
 button {
-  background: none;
-  border: 0px;
+  border-radius: 8px;
+  padding: 5px 10px;
+  background-color:  #bb69c9;
+  border: 0px solid;
   font-size: 2rem;
+  color: white;
 }
 button:hover {
   cursor: pointer;

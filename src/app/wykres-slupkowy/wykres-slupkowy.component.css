@@ -25,3 +25,10 @@
     background-color: #8c7e8e;
     transition: 0.2s ease-in-out;
 }
+#wyb{
+    font-size: 150%;
+    color: white;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left: 2%;
+}

@@ -35,6 +35,7 @@ export class SumByDayOFTheWeekComponent {
           {
             label: 'Sumy wartości paliw',
             data: this.sumDayData,
+            borderWidth: 2,
           },
         ],
       },

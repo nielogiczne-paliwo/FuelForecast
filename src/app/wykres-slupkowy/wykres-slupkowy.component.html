@@ -3,10 +3,13 @@
         <div class="chartBox">
           <canvas id="fuel-by-day"></canvas>
         </div>
+        <section id="wyb">
+        Wybierz dzień:    
         <select id="inp" (change)="changeData($event)">
           <option  *ngFor="let i of deliveryData" [ngValue]="i.date">
             {{i.date}}
           </option>
         </select>
+      </section>
     </article>
   </section>
