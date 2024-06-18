@@ -94,8 +94,7 @@ export class TimeSeriesComponent {
         lastElement.ULTSU = lastElement.ULTSU + i.ULTSU;
       }
     });
-    if (preaparedData.at(-1)?.date !== lastElement.date)
-      preaparedData.push(lastElement);
+    preaparedData.push(lastElement);
 
     this.delivieriesEachDay = [];
     let DK: { x: Date; y: number }[] = [];
