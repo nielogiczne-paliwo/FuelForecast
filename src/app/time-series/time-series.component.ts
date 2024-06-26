@@ -10,6 +10,7 @@ import 'chartjs-adapter-moment';
   styleUrls: ['./time-series.component.css'],
 })
 export class TimeSeriesComponent {
+  fontSize: number = 40;
   private chart: any;
   loadedData: delivierData[] = [];
   delivieriesEachDay: { label: string; data: { x: Date; y: number }[] }[] = [];
@@ -24,6 +25,9 @@ export class TimeSeriesComponent {
     this.loadedData = DashboardService.getTableData();
     this.setDataSet();
     this.setRangeOfDays();
+    if (window.innerWidth < 800) {
+      this.fontSize = 20;
+    }
   }
 
   setRangeOfDays(): void {
@@ -209,7 +213,7 @@ export class TimeSeriesComponent {
           },
           title: {
             font: {
-              size: 40,
+              size: this.fontSize,
             },
             display: true,
             text: 'Dostawy na osi czasu',
