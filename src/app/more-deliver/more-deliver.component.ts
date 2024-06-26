@@ -17,6 +17,6 @@ export class MoreDeliverComponent {
     if (this.moreDeliver.length > 0)
       this.titleText =
         'Dni w których jest niezbędnych więcej niż jeden kierowca';
-    else this.titleText = 'W wubranym okresie wystarszy jeden kierowca';
+    else this.titleText = 'W wybranym okresie wystarszy jeden kierowca';
   }
 }

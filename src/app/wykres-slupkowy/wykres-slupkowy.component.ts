@@ -11,6 +11,7 @@ import { delivierData } from '../interface/interface';
   styleUrls: ['./wykres-slupkowy.component.css'],
 })
 export class WykresSlupkowyComponent {
+  fontSize: number = 40;
   dostawy = dane_dostaw;
   private label: string[] = ['ULG95', 'DK', 'ULTSU', 'ULTDK'];
   private chart: any;
@@ -20,6 +21,9 @@ export class WykresSlupkowyComponent {
   constructor(sesion: SessionService) {
     this.deliveryData = sesion.getDataSession();
     this.setDataSet();
+    if (window.innerWidth < 800) {
+      this.fontSize = 20;
+    }
   }
 
   ngOnInit(): void {
@@ -69,7 +73,7 @@ export class WykresSlupkowyComponent {
         plugins: {
           title: {
             font: {
-              size: 40,
+              size: this.fontSize,
             },
             display: true,
             text: 'Dostawa paliw dla danego dnia',
@@ -99,7 +103,6 @@ export class WykresSlupkowyComponent {
       ULTSU: -1,
       ULTDK: -1,
     };
-    console.log(copyLoadedData);
 
     copyLoadedData.forEach((i) => {
       if (i.date !== lastElement.date) {
@@ -122,7 +125,6 @@ export class WykresSlupkowyComponent {
         d.date instanceof Date ? this.formatDate(d.date) : d.date;
       return dateString === selectedDateString;
     });
-    console.log(delivery);
 
     if (delivery) {
       this.dane = [delivery.ULG95, delivery.DK, delivery.ULTSU, delivery.ULTDK];

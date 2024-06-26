@@ -11,6 +11,7 @@ import { DashboardViewService } from '../service/dashboard-view.service';
   styleUrls: ['./wykres-kolowy.component.css'],
 })
 export class WykresKolowyComponent {
+  fontSize: number = 40;
   private label: string[] = ['ULG95', 'DK', 'ULTSU', 'ULTDK'];
   private chart: any;
   private dane: number[] = [0, 0, 0, 0];
@@ -18,6 +19,9 @@ export class WykresKolowyComponent {
   constructor(private deliver: DashboardViewService) {
     this.deliverData = deliver.getSumDeliveryFuel();
     this.setDeliverData();
+    if (window.innerWidth < 800) {
+      this.fontSize = 20;
+    }
   }
   ngOnInit(): void {
     this.chart = new Chart('canvas', {
@@ -38,7 +42,7 @@ export class WykresKolowyComponent {
         plugins: {
           title: {
             font: {
-              size: 40,
+              size: this.fontSize,
             },
             display: true,
             text: 'Suma dostarczonych paliw',

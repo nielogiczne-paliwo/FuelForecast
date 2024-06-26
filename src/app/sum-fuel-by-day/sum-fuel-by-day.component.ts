@@ -9,6 +9,7 @@ import { Chart } from 'chart.js';
   styleUrls: ['./sum-fuel-by-day.component.css'],
 })
 export class SumFuelByDayComponent {
+  fontSize: number = 40;
   label: string[] = [
     'Niedziela',
     'Poniedziałek',
@@ -24,6 +25,9 @@ export class SumFuelByDayComponent {
   constructor(DashboardService: DashboardViewService) {
     this.data = DashboardService.sumByDatOfTheWeek();
     this.setDataSet();
+    if (window.innerWidth < 800) {
+      this.fontSize = 20;
+    }
   }
 
   ngOnInit(): void {
@@ -55,7 +59,7 @@ export class SumFuelByDayComponent {
         plugins: {
           title: {
             font: {
-              size: 40,
+              size: this.fontSize,
             },
             display: true,
             text: 'Suma dostarczonego ze względu na dzień tygodnia i rodzaj paliwa',
