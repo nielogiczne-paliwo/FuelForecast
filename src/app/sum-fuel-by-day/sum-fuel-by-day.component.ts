@@ -42,6 +42,8 @@ export class SumFuelByDayComponent {
         datasets: this.sumDayData,
       },
       options: {
+        maintainAspectRatio: false,
+
         layout: {
           padding: 10,
         },

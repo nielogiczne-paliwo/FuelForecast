@@ -4,7 +4,7 @@ section {
   right: 0;
   top: 5%;
   z-index: -1;
-  height: 100svh;
+  min-height: 100svh;
   opacity: 0;
 }
 .active {
@@ -16,8 +16,8 @@ section {
   transition: opacity 1s ease;
 }
 article {
-  margin-top: 2.5%;
-  height: 75svh;
+  margin-top: 5%;
+  min-height: 75svh;
   width: 64%;
   background-color: #d9d9d9;
   border-radius: 20px;
@@ -90,7 +90,34 @@ input {
 }
 app-close-button {
   position: relative;
-  top: 6%;
-  right: -94%;
+  top: 20px;
+  right: -90%;
   background-color: purple;
+}
+@media screen and (max-width: 800px) {
+  section {
+    top: 80px;
+  }
+  article {
+    width: 86%;
+  }
+  app-close-button {
+    right: -80%;
+  }
+  h1 {
+    margin: 30px 0px;
+  }
+  .dataForm,
+  .fuelConditionDiv {
+    width: 90%;
+  }
+  .fuelCondition {
+    width: 100%;
+  }
+  input {
+    width: 60%;
+  }
+  .buttonDiv {
+    margin-bottom: 20px;
+  }
 }

@@ -1,54 +1,81 @@
 form {
-    color: white;
-    margin: 0 0 10px 10px;
-    font-size: 1rem;
+  color: white;
+  margin: 0 0 10px 10px;
+  font-size: 1rem;
 }
 
 form h3 {
-    font-weight: 400;
-    margin-bottom: 10px;
-    margin-top: 10px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 form input {
-    margin-left: 10px;
-    border-radius: 8px;
-    padding: 4px 15px;
-    background-color: #bb69c9;
-    border: 0px solid;
-    transition: 0.2s ease-in-out;
-    font-size: 1rem;
-    color: #fff;
-    cursor: pointer;
+  margin-left: 10px;
+  border-radius: 8px;
+  padding: 4px 15px;
+  background-color: #bb69c9;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
 }
 
 form input:hover {
-    background-color: #8c7e8e;
-    transition: 0.2s ease-in-out;
+  background-color: #8c7e8e;
+  transition: 0.2s ease-in-out;
 }
 
 .second-label {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 button {
-    margin-right: 10px;
-    border-radius: 8px;
-    padding: 4px 15px;
-    background-color: #bb69c9;
-    border: 0px solid;
-    transition: 0.2s ease-in-out;
-    font-size: 1rem;
-    color: #fff;
+  margin-right: 10px;
+  border-radius: 8px;
+  padding: 4px 15px;
+  background-color: #bb69c9;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+  font-size: 1rem;
+  color: #fff;
 }
 
 button:hover {
-    background-color: #8c7e8e;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+  background-color: #8c7e8e;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
 .inputs {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 800px) {
+  .chartBox {
+    height: 700px;
+  }
+  .inputs {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .inputs div {
+    width: 100%;
+  }
+  form h3 {
+    margin: 20px 0;
     justify-content: space-between;
+  }
+  input {
+    width: 70%;
+    margin-bottom: 30px;
+  }
+  label {
+    width: 20%;
+    margin-bottom: 30px;
+  }
+  .second-label {
+    margin-left: 0px;
+  }
 }

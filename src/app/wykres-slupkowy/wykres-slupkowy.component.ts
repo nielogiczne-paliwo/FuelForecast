@@ -59,6 +59,8 @@ export class WykresSlupkowyComponent {
         ],
       },
       options: {
+        maintainAspectRatio: false,
+
         scales: {
           y: {
             beginAtZero: true,
@@ -86,15 +88,22 @@ export class WykresSlupkowyComponent {
   }
 
   setDataSet(): void {
-    let copyLoadedData: delivierData[] = JSON.parse(JSON.stringify(this.deliveryData));
+    let copyLoadedData: delivierData[] = JSON.parse(
+      JSON.stringify(this.deliveryData)
+    );
     let preaparedData: delivierData[] = [];
-    let lastElement: delivierData = {date: new Date('01.01.1900'), ULG95: -1, DK: -1, ULTSU: -1, ULTDK: -1};
+    let lastElement: delivierData = {
+      date: new Date('01.01.1900'),
+      ULG95: -1,
+      DK: -1,
+      ULTSU: -1,
+      ULTDK: -1,
+    };
     console.log(copyLoadedData);
-    
+
     copyLoadedData.forEach((i) => {
       if (i.date !== lastElement.date) {
-        if (lastElement.ULG95 !== -1)
-          preaparedData.push(lastElement);
+        if (lastElement.ULG95 !== -1) preaparedData.push(lastElement);
         lastElement = i;
       } else {
         lastElement.DK = lastElement.DK + i.DK;

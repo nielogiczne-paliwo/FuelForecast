@@ -79,13 +79,20 @@ export class TimeSeriesComponent {
   }
 
   setDataSet(toDo: boolean = true): void {
-    let copyLoadedData: delivierData[] = JSON.parse(JSON.stringify(this.loadedData));
+    let copyLoadedData: delivierData[] = JSON.parse(
+      JSON.stringify(this.loadedData)
+    );
     let preaparedData: delivierData[] = [];
-    let lastElement: delivierData = {date: new Date('01.01.1900'), ULG95: -1, DK: -1, ULTSU: -1, ULTDK: -1};
+    let lastElement: delivierData = {
+      date: new Date('01.01.1900'),
+      ULG95: -1,
+      DK: -1,
+      ULTSU: -1,
+      ULTDK: -1,
+    };
     copyLoadedData.forEach((i) => {
       if (i.date !== lastElement.date) {
-        if (lastElement.ULG95 !== -1)
-          preaparedData.push(lastElement);
+        if (lastElement.ULG95 !== -1) preaparedData.push(lastElement);
         lastElement = i;
       } else {
         lastElement.DK = lastElement.DK + i.DK;
@@ -114,9 +121,18 @@ export class TimeSeriesComponent {
       ).valueOf();
       if (dateValueData >= minDate && dateValueData <= maxDate) {
         DK.push({ x: this.changeDateFormatToMMDD(i.date.toString()), y: i.DK });
-        ULG95.push({ x: this.changeDateFormatToMMDD(i.date.toString()), y: i.ULG95 });
-        ULTDK.push({ x: this.changeDateFormatToMMDD(i.date.toString()), y: i.ULTDK });
-        ULTSU.push({ x: this.changeDateFormatToMMDD(i.date.toString()), y: i.ULTSU });
+        ULG95.push({
+          x: this.changeDateFormatToMMDD(i.date.toString()),
+          y: i.ULG95,
+        });
+        ULTDK.push({
+          x: this.changeDateFormatToMMDD(i.date.toString()),
+          y: i.ULTDK,
+        });
+        ULTSU.push({
+          x: this.changeDateFormatToMMDD(i.date.toString()),
+          y: i.ULTSU,
+        });
       }
       if (toDo) this.allDatesDDMM.push(i.date.toString());
     });
@@ -154,6 +170,7 @@ export class TimeSeriesComponent {
         datasets: this.delivieriesEachDay,
       },
       options: {
+        maintainAspectRatio: false,
         scales: {
           y: {
             beginAtZero: true,
@@ -163,7 +180,7 @@ export class TimeSeriesComponent {
             time: {
               unit: 'day',
               displayFormats: {
-                'day': 'DD.MM.yyyy',
+                day: 'DD.MM.yyyy',
               },
             },
             ticks: {
@@ -176,14 +193,18 @@ export class TimeSeriesComponent {
             callbacks: {
               title: (context) => {
                 let date: Date = new Date(context[0].label);
-                let day: string = 
-                  (date.getDate() < 10) ? `0${date.getDate()}` : date.getDate().toString();
-                let month: string = 
-                  (date.getMonth()+1 < 10) ? `0${date.getMonth()+1}` : (date.getMonth()+1).toString();
+                let day: string =
+                  date.getDate() < 10
+                    ? `0${date.getDate()}`
+                    : date.getDate().toString();
+                let month: string =
+                  date.getMonth() + 1 < 10
+                    ? `0${date.getMonth() + 1}`
+                    : (date.getMonth() + 1).toString();
                 let year: string = date.getFullYear().toString();
-                
+
                 return `${day}.${month}.${year}`;
-              }
+              },
             },
           },
           title: {

@@ -1,19 +1,34 @@
 <section>
-    <article class="chartArticle">
-        <div class="chartBox">
-            <canvas id="timeSeriesOfDel"></canvas>
+  <article class="chartArticle">
+    <div class="chartBox">
+      <canvas id="timeSeriesOfDel"></canvas>
+    </div>
+    <form>
+      <h3>Podaj zakres</h3>
+      <div class="inputs">
+        <div>
+          <label for="minDate">Od</label>
+          <input
+            type="date"
+            name="minDate"
+            min="{{ minDate }}"
+            max="{{ inputMaxDate }}"
+            (change)="setMinDate($event)"
+          />
         </div>
-        <form>
-            <h3>Podaj zakres</h3>
-            <div class="inputs">
-                <div>
-                    <label for="minDate">Od</label>
-                    <input type="date" name="minDate" min={{minDate}} max={{inputMaxDate}} (change)="setMinDate($event)" >
-                    <label class='second-label' for="maxDate">Do</label>
-                    <input type="date" name="maxDate" min={{inputMinDate}} max={{maxDate}} (change)="setMaxDate($event)" >
-                </div>
-                <button type="button" (click)="updateChart()" >Wyświetl</button>
-            </div>
-        </form>
-    </article>
+
+        <div>
+          <label class="second-label" for="maxDate">Do</label>
+          <input
+            type="date"
+            name="maxDate"
+            min="{{ inputMinDate }}"
+            max="{{ maxDate }}"
+            (change)="setMaxDate($event)"
+          />
+        </div>
+        <button type="button" (click)="updateChart()">Wyświetl</button>
+      </div>
+    </form>
+  </article>
 </section>

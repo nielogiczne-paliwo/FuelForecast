@@ -44,3 +44,35 @@ h3 {
   color: #a9a6af;
   font-size: 1rem;
 }
+@media screen and (max-width: 800px) {
+  main {
+    padding: 0%;
+  }
+  section {
+    width: 85%;
+  }
+  .mainFrame {
+    width: 100%;
+    margin: 0 5%;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+  .textFrame {
+    margin: 0px;
+    padding: 20px;
+    width: 100%;
+  }
+  h1 {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .abc {
+    display: flex;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    width: 90%;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+}

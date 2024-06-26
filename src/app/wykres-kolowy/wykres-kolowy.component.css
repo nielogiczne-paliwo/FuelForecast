@@ -1,0 +1,8 @@
+@media screen and (max-width: 800px) {
+  .chartBox {
+    min-height: 700px;
+  }
+  canvas {
+    min-height: 500px;
+  }
+}
