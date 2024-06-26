@@ -29,6 +29,7 @@ export class SumByDayOFTheWeekComponent {
 
     this.chart = new Chart('canvas1', {
       type: 'bar',
+
       data: {
         labels: this.label,
         datasets: [
@@ -40,6 +41,8 @@ export class SumByDayOFTheWeekComponent {
         ],
       },
       options: {
+        maintainAspectRatio: false,
+
         layout: {
           padding: 10,
         },

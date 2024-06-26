@@ -32,6 +32,8 @@ export class WykresKolowyComponent {
         ],
       },
       options: {
+        maintainAspectRatio: false,
+
         aspectRatio: 1.5,
         plugins: {
           title: {
@@ -49,7 +51,7 @@ export class WykresKolowyComponent {
           legend: {
             position: 'bottom',
             align: 'center',
-            maxHeight: 100,
+            maxHeight: 300,
             labels: {
               color: 'white',
               boxWidth: 40,

@@ -28,12 +28,12 @@
         />
       </div>
     </div>
-    <app-fuel-condition [isActive]="activeForm" (active)="activform($event)" />
-    <app-error-message
-      [isActive]="activeError"
-      [title]="'BRAK DANYCH'"
-      [text]="'Wybierz plik lub wprowadź dane ręcznie'"
-      (active)="activeErrorMessage($event)"
-    />
   </section>
+  <app-fuel-condition [isActive]="activeForm" (active)="activform($event)" />
+  <app-error-message
+    [isActive]="activeError"
+    [title]="'BRAK DANYCH'"
+    [text]="'Wybierz plik lub wprowadź dane ręcznie'"
+    (active)="activeErrorMessage($event)"
+  />
 </main>

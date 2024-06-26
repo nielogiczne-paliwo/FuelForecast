@@ -9,7 +9,7 @@ table {
   width: 95%;
   border-collapse: separate;
   border-spacing: 0;
-  border: 1px solid rgb(230, 146, 255,0.411);
+  border: 1px solid rgb(230, 146, 255, 0.411);
   border-radius: 13px;
   margin-left: 2.5%;
   margin-bottom: 2.5%;
@@ -21,10 +21,16 @@ table {
 th {
   width: 20%;
   text-align: center;
-  border: 2px solid rgb(195, 0, 255,0.411);
+  border: 2px solid rgb(195, 0, 255, 0.411);
 }
 
 td {
-  border: 1px solid rgb(230, 146, 255,0.411);
+  border: 1px solid rgb(230, 146, 255, 0.411);
   text-align: center;
+}
+@media screen and (max-width: 800px) {
+  table {
+    width: 100%;
+    margin-left: 0%;
+  }
 }
